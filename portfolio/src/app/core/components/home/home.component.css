@@ -1,0 +1,104 @@
+
+
+.landing-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #010012;
+}
+
+.landing-page img {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 5s;
+}
+.landing-content{
+  
+  padding: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #00000035;
+  filter: drop-shadow(2px 2px 2px #fff);
+  position: absolute;
+  flex-direction: column;
+  height: 100%;
+  z-index: 10;
+  font-family: 'Panching';
+  letter-spacing: 8px;
+  font-size: 37px;
+  font-style: italic;
+  line-height: 80px;
+  gap: 35px;
+}
+.landing-content p{
+  transition: all 1s;
+  opacity: 0;
+  color: #ffffff6c;
+  font-size: 20px;
+  line-height: normal;
+  letter-spacing: normal;
+  font-family: 'Satoshi-Variable';
+  font-style: normal;
+  font-weight: 400;
+  margin-right: auto;
+  width: 50%;
+  padding: 0 15px;
+}
+
+.light-onload{
+  filter: drop-shadow(3px 3px 5px #ffffff);
+  color: #ffffff5f;
+  transition: all 1s;
+  animation-name: flashing;
+  animation-duration: 8s;
+  animation-iteration-count: 1;
+}
+@keyframes flashing{
+    0%{
+        color: #094b93a4;
+    }
+    5%{
+      color: #ffffff30;
+    }
+    6%{
+      color: #ffffff50;
+    }
+    8%{
+      color: #ffffff1e;
+    }
+    10%{
+      color: #ffffff32;
+    }
+    20%{
+      color: #ffffff74;
+    }
+    30%{
+      color: #ffffff32;
+    }
+    35%{
+      color: #ffffff4d;
+    }
+    45%{
+      color: hsla(0, 0%, 100%, 0.09);
+    }
+    60%{
+  color: hsla(0, 0%, 100%, 0.242);
+
+    }
+    65%{
+      color: #ffffff51;
+    }
+    79%{
+      color: #ffffff30;
+    }
+    100%{
+      color: #ffffff5f;
+    }
+}

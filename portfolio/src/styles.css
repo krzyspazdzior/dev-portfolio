@@ -1,0 +1,70 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+
+
+@font-face {
+  font-family: 'Landing-Font';
+  src: url('assets/font2.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bounded';
+  src: url('assets/Bounded-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Bounded';
+  src: url('assets/Bounded-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Variable';
+  src: url('assets/Satoshi-Variable.ttf') format(truetype);
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Panching';
+  src: url('assets/panching2.otf') format('truetype');
+  
+}
+@font-face {
+  font-family: 'Bounded';
+  src: url('assets/Bounded-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Bounded-Variable';
+  src: url('assets/Bounded-Black.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* button {
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.25s;
+} */
+body, html{
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: 'Satoshi-Variable';
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+  background-color: #010012;
+}
