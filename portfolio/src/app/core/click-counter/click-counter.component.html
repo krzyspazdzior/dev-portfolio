@@ -1,0 +1,33 @@
+<section>
+
+    <h1>BECAUSE WEBSITES SHOULDN'T BE BORING</h1>
+    <div class="clicker-area">
+        
+        <div class="whole-monitor">
+
+            <div class="monitor">
+            <div class="screen">
+                <img src="/backgrounds/charts.webp" alt="">
+                    <div class="loading-bar-container" *ngIf="loading">
+        <div class="loading-bar" [style.width.%]="loadingProgress"></div>
+    </div>
+            </div>
+            <div class="stand"></div>
+            <div class="base"></div>
+        </div>
+    </div>
+    
+        <svg #cableSvg class="cable" viewBox="100 50 300 50" preserveAspectRatio="xMidYMid meet">
+            <path d="M 100 50 C 200 100, 300 100, 400 50"
+                stroke="#ffffff6a"
+                stroke-width="4"
+                fill="none" />
+        </svg>
+        <button class="pushable" (click)="onButtonClick()">
+            <span class="shadow"></span>
+            <span class="edge"></span>
+            <span class="front"> Push Me </span>
+        </button>
+
+    </div>
+</section>

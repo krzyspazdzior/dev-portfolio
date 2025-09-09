@@ -1,8 +1,11 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { HeaderComponent } from '../../shared/header/header.component';
+import { AboutMeComponent } from '../about-me/about-me.component';
+import { ClickCounterComponent } from '../../click-counter/click-counter.component';
+
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, AboutMeComponent, ClickCounterComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -16,13 +19,13 @@ ngAfterViewInit(): void {
           img.style.opacity = "1";
         }
     }
-    ,2000)
+    ,2000) // 2000
     setInterval(() => {
       const p = document.querySelector("p");
       if(p){
         p.style.opacity = "1";
       }
 
-    }, 4000)
+    }, 4000) // 4000
 }
 }

@@ -1,0 +1,241 @@
+section{
+    justify-content: center;
+    gap: 15%;
+}
+h1{
+    font-family: 'Satoshi-Variable', sans-serif;
+    color: #ffffffbc;
+    font-weight: 900;
+    font-size: 45px;
+    /* filter: drop-shadow(2px 2px 8px #fff); */
+    width: 45%;
+    text-align: center;
+}
+.clicker-area{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+svg{
+    width: 350px;
+    color: #ffffff6a;
+}
+
+.monitor {
+    z-index: 5;
+transform: scale(1.02);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ekran */
+.monitor .screen {
+  width: 400px;
+  height: 270px;
+  background: #00000c;
+  border: 6px solid #171717;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff80;
+  font-family:  monospace;
+  font-weight: bold;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  
+}
+.monitor .screen p span{
+    color: #0395f7;
+}
+/* odbicie na ramce */
+.monitor .screen::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* stojak */
+.monitor .stand {
+  width: 15px;
+  height: 40px;
+  background: linear-gradient(#262626, #000000);
+  border-radius: 3px;
+  margin: -2px 0 0 0;
+}
+
+/* podstawa */
+.monitor .base {
+  width: 100px;
+  height: 12px;
+  background: linear-gradient(#1b1b1b, #000000);
+  border-radius: 6px;
+  margin: -2px 0 0 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+/* Button */ 
+.pushable {
+    margin-bottom: 35px;
+  position: relative;
+  background: transparent;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
+  outline-color: deeppink;
+  transition: filter 250ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  transform: scale(1.2);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #0370b9;
+  border-radius: 8px;
+  filter: blur(5px);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+    background: linear-gradient(
+  to left,
+  #00567e 0%,
+  #0395f7 92%,
+  #0278c7 100%
+);
+}
+
+.front {
+    font-family: monospace;
+    font-weight: 900;
+    border-radius: 8px;
+  display: block;
+  position: relative;
+    background: linear-gradient(
+  to left,
+  #66cfff 0%,
+  #0395f7 92%,
+  #0278c7 100%
+);
+  padding: 16px 32px;
+  color: rgba(255, 255, 255, 0.704);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.pushable:hover {
+  filter: brightness(110%);
+}
+
+.pushable:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+    color: #fff;
+    
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.screen{
+    display: flex;
+}
+.monitor img{
+    filter: brightness(0);
+    margin-bottom: auto;
+    width: 90%;
+    height: 225px;
+    border-radius: 8px;
+}
+/* SVG kabel - efekt glow przy kliknięciu */
+svg.cable.glow path {
+    stroke: #0395f7;
+    transition: all 0.5s ease;
+}
+svg.cable.glow{
+    z-index: 0;
+}
+
+
+/* temp */
+.loading-bar-container {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 10px; /* trochę od dołu ekranu */
+    left: 10px;
+    right: 10px;
+    height: 10px;
+    background: rgba(3,149,247,0.1); /* przygaszone tło */
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(3,149,247,0.2);
+}
+
+.loading-bar {
+    height: 100%;
+        background: linear-gradient(
+      90deg,
+      #0278c7 0%,
+      #0395f7 30%,
+      #66cfff 70%,
+      #0395f7 100%
+    );
+    box-shadow: 0 0 10px #0395f7, 0 0 20px #0395f7, 0 0 40px #0278c7;
+    box-shadow: 0 0 6px #0395f7, 0 0 12px #0395f7;
+    transition: width 0.2s ease;
+    filter: drop-shadow(0px 0px 30px #0395f7);
+}
+
+.monitor-glow{
+    transition: all 1s ease-in-out;
+    filter: drop-shadow(0 0 35px #0395f751);
+}
+.monitor img.img-glow{
+    filter: brightness(1);
+    transition: all 1s;
+}

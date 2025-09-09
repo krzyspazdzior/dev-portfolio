@@ -1,7 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { After } from 'node:v8';
 
-
 @Component({
   selector: 'app-header',
   imports: [],
@@ -40,6 +39,21 @@ export class HeaderComponent implements OnInit, AfterViewInit{
       if(header){
         header.style.opacity = "1";
       }
-    }, 3000)
+    }, 3000) // 3000
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove('active'));
+          const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
+          if (activeLink) activeLink.classList.add('active');
+        }
+      });
+    }, { threshold: 0.6 });
+
+    sections.forEach(section => observer.observe(section));
   }
 }
