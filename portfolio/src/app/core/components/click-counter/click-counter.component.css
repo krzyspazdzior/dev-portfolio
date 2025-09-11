@@ -1,5 +1,7 @@
 section{
     justify-content: center;
+    padding: 35px;
+    padding-top: 60px;
     gap: 15%;
 }
 h1{
@@ -7,7 +9,6 @@ h1{
     color: #ffffffbc;
     font-weight: 900;
     font-size: 45px;
-    /* filter: drop-shadow(2px 2px 8px #fff); */
     width: 45%;
     text-align: center;
 }
@@ -19,24 +20,24 @@ h1{
 }
 
 svg{
+    margin-bottom: 15px;
     width: 350px;
     color: #ffffff6a;
 }
 
 .monitor {
-    z-index: 5;
-transform: scale(1.02);
+  z-index: 5;
+  transform: scale(1.02);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* ekran */
 .monitor .screen {
   width: 400px;
   height: 270px;
   background: #00000c;
-  border: 6px solid #171717;
+  border: 3px solid #171717;
   border-radius: 8px;
   display: flex;
   justify-content: center;
@@ -52,7 +53,6 @@ transform: scale(1.02);
 .monitor .screen p span{
     color: #0395f7;
 }
-/* odbicie na ramce */
 .monitor .screen::before {
   content: '';
   position: absolute;
@@ -62,30 +62,31 @@ transform: scale(1.02);
   pointer-events: none;
 }
 
-/* stojak */
 .monitor .stand {
-  width: 15px;
+  width: 20px;
   height: 40px;
   background: linear-gradient(#262626, #000000);
   border-radius: 3px;
   margin: -2px 0 0 0;
 }
 
-/* podstawa */
 .monitor .base {
-  width: 100px;
-  height: 12px;
-  background: linear-gradient(#1b1b1b, #000000);
+  width: 120px;
+  height: 15px;
+  background: linear-gradient(#1b1b1b, #111111);
   border-radius: 6px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
   margin: -2px 0 0 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.5);
 }
 
+.monitor p{
+  padding-top: 10px;
+  
+  color: #ffffff33;
+}
 
-
-
-
-/* Button */ 
 .pushable {
     margin-bottom: 35px;
   position: relative;
@@ -158,13 +159,22 @@ transform: scale(1.02);
 .pushable:hover .front {
   transform: translateY(-6px);
   transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
-    color: #fff;
+    color: #ffffffa5;
     
 }
 
-.pushable:active .front {
-  transform: translateY(-2px);
+.button-clicked {
+    transition: all 0.3s ease;
+  transform: translateY(-3px);
   transition: transform 34ms;
+  filter: drop-shadow(0px 0px 30px #0395f7b1);
+  box-shadow: inset 0 0 10px #fff;
+  color: #fff;
+  
+}
+.button-clicked-2{
+  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
 .pushable:hover .shadow {
@@ -174,8 +184,14 @@ transform: scale(1.02);
 
 .pushable:active .shadow {
   transform: translateY(1px);
-  transition: transform 34ms;
+  transition: transform 0.5s;
 }
+
+.pushable.pressed .shadow {
+  transform: translateY(1px);
+  transition: all 0.3s ease;
+}
+
 
 .pushable:focus:not(:focus-visible) {
   outline: none;
@@ -191,26 +207,15 @@ transform: scale(1.02);
     height: 225px;
     border-radius: 8px;
 }
-/* SVG kabel - efekt glow przy kliknięciu */
-svg.cable.glow path {
-    stroke: #0395f7;
-    transition: all 0.5s ease;
-}
-svg.cable.glow{
-    z-index: 0;
-}
-
-
-/* temp */
 .loading-bar-container {
     display: flex;
     align-items: center;
     position: absolute;
-    bottom: 10px; /* trochę od dołu ekranu */
+    bottom: 10px;
     left: 10px;
     right: 10px;
     height: 10px;
-    background: rgba(3,149,247,0.1); /* przygaszone tło */
+    background: rgba(3,149,247,0.1);
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(3,149,247,0.2);
@@ -233,9 +238,50 @@ svg.cable.glow{
 
 .monitor-glow{
     transition: all 1s ease-in-out;
-    filter: drop-shadow(0 0 35px #0395f751);
+    animation: monitorGlow 5s infinite ease-in-out;
 }
 .monitor img.img-glow{
     filter: brightness(1);
     transition: all 1s;
+}
+
+@keyframes monitorGlow{
+    0%{
+        filter: drop-shadow(0 0 100px #06d9f135);
+    }
+    50%{
+        filter: drop-shadow(0 0 100px #06d9f188);
+    }
+    100%{
+        filter: drop-shadow(0 0 100px #06d9f135);
+    }
+}
+
+svg.cable .base {
+  stroke: #ffffff1b;
+  stroke-width: 4;
+  fill: none;
+}
+
+svg.cable .fillable {
+  stroke: #0395f7;
+  stroke-width: 4;
+  fill: none;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+svg.cable.fill .fillable {
+  animation: cableFill 2s linear forwards;
+}
+
+@keyframes cableFill {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }

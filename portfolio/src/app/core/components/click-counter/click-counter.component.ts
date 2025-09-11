@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
 })
 export class ClickCounterComponent{
 
-@ViewChild('cableSvg', { static: false }) cableSvg!: ElementRef<SVGElement>;     
+@ViewChild('cableSvg', { static: false }) cableSvg!: ElementRef<SVGElement>;
 
 loading = false;
 loadingProgress = 0;
@@ -18,7 +18,7 @@ startLoading() {
     if (this.loading) return;
     this.loading = true;
     this.loadingProgress = 0;
-
+setTimeout(() => {
     const interval = setInterval(() => {
         this.loadingProgress += 2;
         if (this.loadingProgress >= 100) {
@@ -28,22 +28,37 @@ startLoading() {
     }, 50);
 }
 
+
+, 1500);
+}
+
 onButtonClick() {
   if (!this.cableSvg) return;
   const svgEl = this.cableSvg.nativeElement;
+  
+  const buttonFront = document.querySelector(".front");
+  const button = document.querySelector(".pushable");
+  if(button && buttonFront){
+    button.classList.add("pressed");
+    setTimeout(() => button.classList.add("button-clicked-2"), 25)
+    buttonFront.classList.add("button-clicked");
+  }
 
   const monitor = document.querySelector(".monitor");
   if(monitor){
-      setTimeout(() => monitor.classList.add("monitor-glow"), 3000);
+      setTimeout(() => monitor.classList.add("monitor-glow"), 4500);
 
   }
   const img = document.querySelector(".monitor img");
   if(img){
-          setTimeout(() => img.classList.add("img-glow"), 3000);
+          setTimeout(() => img.classList.add("img-glow"), 4500);
 
   }
 
   svgEl.classList.add('glow');
+  svgEl.classList.add('fill');
+
+
   this.startLoading()
 }
 }

@@ -1,7 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { AboutMeComponent } from '../about-me/about-me.component';
-import { ClickCounterComponent } from '../../click-counter/click-counter.component';
+import { ClickCounterComponent } from '../click-counter/click-counter.component';
 
 @Component({
   selector: 'app-home',

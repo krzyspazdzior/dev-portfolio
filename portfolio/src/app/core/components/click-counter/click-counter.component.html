@@ -1,6 +1,6 @@
+<div id="particles"></div>
 <section>
-
-    <h1>BECAUSE WEBSITES SHOULDN'T BE BORING</h1>
+    <h1>NOT JUST CODE. EXPERIENCES</h1>
     <div class="clicker-area">
         
         <div class="whole-monitor">
@@ -14,15 +14,25 @@
             </div>
             <div class="stand"></div>
             <div class="base"></div>
+            <p>Interactive dashboard prototype</p>
         </div>
     </div>
-    
-        <svg #cableSvg class="cable" viewBox="100 50 300 50" preserveAspectRatio="xMidYMid meet">
-            <path d="M 100 50 C 200 100, 300 100, 400 50"
-                stroke="#ffffff6a"
-                stroke-width="4"
-                fill="none" />
-        </svg>
+<svg #cableSvg class="cable" viewBox="100 50 300 50" preserveAspectRatio="xMidYMid meet">
+  <path class="base"
+        d="M 400 75 Q 350 50, 300 75 T 200 75 T 100 75"
+        stroke="#555"
+        stroke-width="4"
+        fill="none" />
+
+  <path class="fillable"
+        d="M 400 75 Q 350 50, 300 75 T 200 75 T 100 75"
+        stroke="#0395f7"
+        stroke-width="4"
+        fill="none"
+        stroke-dasharray="400"
+        stroke-dashoffset="400" />
+
+</svg>
         <button class="pushable" (click)="onButtonClick()">
             <span class="shadow"></span>
             <span class="edge"></span>
