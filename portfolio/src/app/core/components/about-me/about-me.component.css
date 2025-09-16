@@ -10,7 +10,6 @@ h1{
     color: #ffffffbc;
     font-weight: 900;
     font-size: 45px;
-    /* filter: drop-shadow(2px 2px 8px #fff); */
     width: 45%;
     text-align: center;
 
@@ -20,23 +19,36 @@ h4{
     color: #029affe0;
     font-weight: 900;
     font-size: 20px;
-    letter-spacing: 8px;
+    letter-spacing: 5px;
 }
 article {
+    position: relative;
     display: flex;
     height: 415px;
     flex-direction: column;
     width: 25%;
     padding: 20px;
     border-radius: 16px;
+    overflow: hidden;
     background: linear-gradient(145deg, #10101a, #0d0d15);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.85), 0 0 20px rgba(3, 149, 247, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 article:hover {
     transform: translateY(-15px);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9), 0 0 40px rgba(3, 149, 247, 0.35);
+    box-shadow: 0 0 30px 2px #ffffff1d;
+}
+article:hover .icon{
+    transform: rotate(360deg);
+    background-color: #029affe0;
+    border-radius: 38px;
+    padding: 35px;
+    transition: all 0.6s ease;
+}
+article:hover .icon>i {
+    color: #fff;
+    transition: all 0.4s ease;
 }
 .article-area{
     display: flex;
@@ -51,7 +63,7 @@ h5{
 }
 article .icon i{
     filter: drop-shadow(2px 2px 6px #029affe0);
-    color: #029affe0;
+    color: #029affe0 ;
     font-size: 50px;
 }
 article .icon{
@@ -59,9 +71,22 @@ article .icon{
     background-color: #ffffff27;
     width: 80px;
     height: 80px;
-    border-radius: 100px;
+    border-radius: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
     
+}
+.article-block{
+    position: absolute;
+    top: 100%;
+    left: 100%;
+    width: 100px;
+    height: 25px;
+    background-color: #029affe0;
+    transition: transform 0.4s;
+    
+}
+article:hover .article-block{
+    transform: translate(-70px, -35px) rotate(-45deg);
 }
