@@ -78,3 +78,104 @@ section{
   scroll-snap-align: start;
   scroll-snap-stop: always;
 }
+
+.button {
+  transition: all 0.5s,
+  opacity 2s,
+  background-color .8s;
+  color: #ffffff51;
+  background-color: #ffffff18;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  padding-block: 0.5rem;
+  padding-inline: 1.25rem;
+  border-radius: 15px;
+  display: flex;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: bold;
+  outline: none;
+  overflow: hidden;
+  font-size: 15px;
+  border: 0;
+  width: 125px;
+  height: 40px;
+}
+
+.button .icon {
+  width: 24px;
+  height: 24px;
+  transition: all 0.3s ease-in-out;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  color: rgba(255, 255, 255, 0.759);
+  filter: drop-shadow(0px 0px 6px #0395f7);
+  background-color: #0395f7;
+}
+
+.button:hover .icon {
+  transform: translate(4px);
+}
+
+.button:hover::before {
+  animation: shine 1.5s ease-out infinite;
+}
+.button > a{
+  font-family: 'Satoshi-Variable';
+  font-weight: 500;
+  letter-spacing: 1px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 30%,
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 255, 255, 0) 70%
+  );
+  top: 0;
+  left: -100px;
+  opacity: 0.6;
+}
+
+@keyframes shine {
+  0% {
+    left: -100px;
+  }
+
+  60% {
+    left: 100%;
+  }
+
+  to {
+    left: 100%;
+  }
+}
+
+h5{
+    letter-spacing: 1.5px;
+    filter: drop-shadow(2px 2px 3px #029affe0);
+    color: #029affe0;
+    font-weight: 900;
+    font-size: 20px;
+    letter-spacing: 8px;
+}
+.title-area{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}

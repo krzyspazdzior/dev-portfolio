@@ -4,13 +4,7 @@ section{
     gap: 5%;
     padding-top: 100px;
 }
-.title-area{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
+
 h1{
     font-family: 'Satoshi-Variable', sans-serif;
     color: #ffffffbc;
@@ -21,7 +15,7 @@ h1{
     text-align: center;
 
 }
-h4, h5{
+h4{
     filter: drop-shadow(2px 2px 3px #029affe0);
     color: #029affe0;
     font-weight: 900;
@@ -52,7 +46,7 @@ article:hover {
     gap: 80px;
 }
 h5{
-    letter-spacing: 1.5px;
+    letter-spacing: 0.9px;
     margin-bottom: 10px;
 }
 article .icon i{
@@ -60,7 +54,7 @@ article .icon i{
     color: #029affe0;
     font-size: 50px;
 }
-.icon{
+article .icon{
     margin: 15px 0;
     background-color: #ffffff27;
     width: 80px;

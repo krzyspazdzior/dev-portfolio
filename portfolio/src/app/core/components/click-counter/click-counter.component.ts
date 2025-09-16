@@ -25,7 +25,7 @@ setTimeout(() => {
             clearInterval(interval);
             this.loadingProgress = 100;
         }
-    }, 50);
+    }, 100);
 }
 
 
@@ -44,14 +44,40 @@ onButtonClick() {
     buttonFront.classList.add("button-clicked");
   }
 
+  const info = document.querySelector(".screen-info");
+
+  if(info){
+    let dots = "";
+    let infoEnd = false;
+    setTimeout(() => infoEnd = true, 6900);
+    setTimeout(() => {
+    const loadingText = setInterval(() => {
+        
+        if(dots.length == 3){
+          dots = ""
+        }else{
+          dots += ".";
+        }
+        if(infoEnd == false){
+          info.innerHTML = "LOADING" + dots;
+        }else{
+          clearInterval(loadingText);
+          info.innerHTML = "READY!";
+          info.classList.add("info-ready")
+          setTimeout(() => info.innerHTML = "", 1500);
+        }
+      }, 600)
+    }, 1175)
+  }
+
   const monitor = document.querySelector(".monitor");
   if(monitor){
-      setTimeout(() => monitor.classList.add("monitor-glow"), 4500);
+      setTimeout(() => monitor.classList.add("monitor-glow"), 8100);
 
   }
   const img = document.querySelector(".monitor img");
   if(img){
-          setTimeout(() => img.classList.add("img-glow"), 4500);
+          setTimeout(() => img.classList.add("img-glow"), 8100);
 
   }
 

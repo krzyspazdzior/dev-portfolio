@@ -1,8 +1,8 @@
 section{
-    justify-content: center;
+    height: 100vh;
+    justify-content: space-evenly;
     padding: 35px;
-    padding-top: 60px;
-    gap: 15%;
+    padding-top: 85px;
 }
 h1{
     font-family: 'Satoshi-Variable', sans-serif;
@@ -32,6 +32,21 @@ svg{
   flex-direction: column;
   align-items: center;
 }
+.monitor .screen p{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff8e;
+  width: 100px;
+  text-align: center;
+  z-index: 10;
+}
+.info-ready{
+  color: #0395f7;
+  filter: drop-shadow(0 0 2px #0395f7);
+  font-weight: bold;
+}
 
 .monitor .screen {
   width: 400px;
@@ -48,7 +63,8 @@ svg{
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
-  
+  filter: drop-shadow(0 0 150px #ffffff44);
+  transition: filter 1s;
 }
 .monitor .screen p span{
     color: #0395f7;
@@ -201,11 +217,12 @@ svg{
     display: flex;
 }
 .monitor img{
-    filter: brightness(0);
+    opacity: 0;
     margin-bottom: auto;
     width: 90%;
     height: 225px;
     border-radius: 8px;
+    z-index: 100;
 }
 .loading-bar-container {
     display: flex;
@@ -237,23 +254,19 @@ svg{
 }
 
 .monitor-glow{
-    transition: all 1s ease-in-out;
-    animation: monitorGlow 5s infinite ease-in-out;
+    animation: monitorGlow 10s infinite ease-in-out alternate;
 }
 .monitor img.img-glow{
-    filter: brightness(1);
+    opacity: 1;
     transition: all 1s;
 }
 
 @keyframes monitorGlow{
     0%{
-        filter: drop-shadow(0 0 100px #06d9f135);
-    }
-    50%{
-        filter: drop-shadow(0 0 100px #06d9f188);
+        filter: drop-shadow(0 0 0px #06d9f135);
     }
     100%{
-        filter: drop-shadow(0 0 100px #06d9f135);
+        filter: drop-shadow(0 0 100px #06d9f188);
     }
 }
 
@@ -284,4 +297,29 @@ svg.cable.fill .fillable {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+
+.learn-more-area{
+  display: flex;
+  justify-content: center;
+}
+.button{
+  border-radius: 1000px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button i{
+  font-size: 50px;
+  color: #ffffff65;
+}
+.button:hover{
+  color: #00000080;
+}
+h5{
+  letter-spacing: 5px;
+
 }
