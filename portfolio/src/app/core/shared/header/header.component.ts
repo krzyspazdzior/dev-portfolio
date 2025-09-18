@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit, AfterViewInit{
       if(header){
         header.style.opacity = "1";
       }
-    }, 3000) // 3000
+    }, 250) // 3000
 
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');
