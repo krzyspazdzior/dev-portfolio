@@ -34,13 +34,6 @@ export class HeaderComponent implements OnInit, AfterViewInit{
   }
 
   ngAfterViewInit(): void {
-    setInterval(() => {
-      const header = document.querySelector("header");
-      if(header){
-        header.style.opacity = "1";
-      }
-    }, 250) // 3000
-
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('nav a');
 

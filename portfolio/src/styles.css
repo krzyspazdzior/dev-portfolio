@@ -3,6 +3,7 @@
 :root{
   --main-bg: #010012;
   --blue: #0395f7;
+  --font-secondary: #ffffffbc;
 }
 
 @font-face {
@@ -72,7 +73,7 @@ html{
 section{
   background-color: var(--main-bg);
   width: 100%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;

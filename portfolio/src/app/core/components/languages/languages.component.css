@@ -1,3 +1,7 @@
+section{
+  padding-top: 20px;
+}
+
 #angular-hex {
   position: relative;
   overflow: hidden;
@@ -42,7 +46,7 @@ h1{
     filter: brightness(0.9);
 }
 .img-wrapper img{
-    width: 420px;
+    width: 400px;
     border-radius: 15px;
 }
 section{
