@@ -11,44 +11,22 @@
                 <div class="system-btn green"></div>
             </div>
             <div class="tabs-wrapper">
-                <div class="tab">
+                @for (title of titles; track $index) {
+                    <div class="tab"
+                    [class.active]="activeIndex === $index"
+                    (click)="setActive($index)"
+                    >
+                    
+                        <img [src]="icons[$index]" alt="">
+
                     <p>
-                        Dribble Music
+                        {{ title }}
                     </p>
-                    <h5>×</h5>
-                </div>
-                <div class="tab">
-                    <p>
-                        Fervo Casino
-                    </p>
-                    <h5>
+                    <h5 [class.active-h5]="activeIndex === $index">
                         ×
                     </h5>
                 </div>
-                <div class="tab">
-                    <p>
-                        Rythmify
-                    </p>
-                    <h5>
-                        ×
-                    </h5>
-                </div>
-                <div class="tab">
-                    <p>
-                        CareMatch
-                    </p>
-                    <h5>
-                        ×
-                    </h5>
-                </div>
-                <div class="tab">
-                    <p>
-                        Rescript
-                    </p>
-                    <h5>
-                        ×
-                    </h5>
-                </div>
+                }
             </div>
         </div>
         <div class="toolbar">
@@ -61,18 +39,23 @@
                 <div class="searchbar-left">
                     <i class="bi bi-shield"></i>
                     <i class="bi bi-sliders"></i>
-                    <p>https://dribble-music.com</p>
+                    @for(link of links; track $index) {
+                        <p [class.active-link]="activeIndex === $index">https://{{link}}</p>
+                    }
                 </div>
                 <i class="bi bi-translate"></i>
             </div>
             <div class="extensions">
                 <i class="bi bi-download"></i>
                 <i class="bi bi-puzzle"></i>
-                <i class="bi bi-list"></i>
+                <i class="bi bi-list" id="menu"></i>
             </div>
         </div>
         <div class="browser-result">
-            <img src="images/dribble_pc.png" alt="">
+            @for(img of imgs; track $index) {
+                <img [src]="img" alt="" [class.active-img]="activeIndex === $index">
+            }
+            <!-- <img src="images/dribble_pc.png" alt=""> -->
         </div>
     </div>
 
