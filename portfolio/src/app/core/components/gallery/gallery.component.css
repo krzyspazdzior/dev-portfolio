@@ -119,6 +119,7 @@ p{
 }
 .tab.active.active.active{
     background-color: #1b193c;
+    color: #fff;
 }
 .tab:hover{
     background-color: #ffffff0a;
@@ -193,6 +194,30 @@ p{
 
 #menu{
     animation: blink 2s infinite; 
+    position: relative;
+    z-index: 20;
+}
+#menu::after{
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--font-secondary);
+    text-shadow: none;
+    content: 'click the menu button for more options (click to dismiss)';
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 110%;
+    transform: translateX(-50%);
+    width: 200px;
+    padding: 10px;
+    background-color: #0e0d21;
+    border: 1px solid #ffffff3d;
+    border-radius: 12px;
+    cursor: pointer;
+}
+#menu.active-menu{
+    content: '';
 }
 @keyframes  blink{
     0%{

@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './gallery.component.css'
 })
 export class GalleryComponent {
-    titles = ['Dribble Music', 'CareMatch', 'Rythmify', 'Fervo Casino', 'Rescript']; 
+    titles = ['Dribble Music', 'CareMatch', 'Rhytmify', 'Fervo Casino', 'Rescript']; 
     icons = ['images/dribble_icon.png', 'images/carematch_icon.png','images/rythmify_icon.png', 'images/fervo_icon.png', 'images/rescript_icon.png'];
-    imgs = ['images/dribble_pc.png', 'images/carematch_pc.png', 'images/rythmify_pc.png', 'images/fervo_pc.png', 'images/Rescript_pc.png'];
+    imgs = ['images/dribble_pc.png', 'images/carematch_pc.png', 'images/rythmify_pc.png', 'images/fervo_pc.png', 'images/rescript_pc.png'];
     links = ['dribble-music.com', 'carematch.com', 'rythmify.com', 'fervo.com', 'rescript.dev'];
     activeIndex: number = 0
 
