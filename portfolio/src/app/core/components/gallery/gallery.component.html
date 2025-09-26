@@ -33,7 +33,7 @@
             <div class="arrow-area">
                 <i class="bi bi-arrow-left"></i>
                 <i class="bi bi-arrow-right"></i>
-                <i class="bi bi-arrow-clockwise"></i>
+                <i class="bi bi-arrow-clockwise" (click)="refresh()"></i>
             </div>
             <div class="searchbar">
                 <div class="searchbar-left">
@@ -48,79 +48,26 @@
             <div class="extensions">
                 <i class="bi bi-download"></i>
                 <i class="bi bi-puzzle"></i>
-                <i class="bi bi-list" id="menu"></i>
+                <div>
+                    <i class="bi bi-list" id="menu" (click)="menuClick()"></i>
+                    <div class="dropdown">
+                        <ul>
+                            <p>Browser tools</p>
+                            <hr>
+                            <li>Visit website</li>
+                            <li>Switch to phone version</li>
+                            <li>Website information</li>
+                            <li>History</li>
+                            <li class="disabled">Browser version: 1.00021</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="browser-result">
             @for(img of imgs; track $index) {
                 <img [src]="img" alt="" [class.active-img]="activeIndex === $index">
             }
-            <!-- <img src="images/dribble_pc.png" alt=""> -->
         </div>
     </div>
-
-<!-- 
-    <article>
-        <div class="img-wrapper">
-            <img src="/images/laptop.png" alt="">
-        </div>
-        <div class="article-content">
-            <h2>
-                DRIBBLE MUSIC
-            </h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, iure repellendus dolores reiciendis perspiciatis doloremque nemo qui corporis unde placeat, ducimus molestiae ipsum voluptatem voluptatibus ut quia. Neque culpa accusantium reprehenderit sed, libero aliquid qui! Temporibus, tempore. Inventore eius praesentium, nam, accusantium alias voluptas illo nostrum vero voluptatibus beatae maiores.
-            </p>
-            <div class="badges-wrapper">
-                <div class="badge angular-badge">
-                     <i class="devicon-angular-plain"></i> Angular
-                </div>
-                <div class="badge spotify-badge">
-                    <i class="bi bi-spotify"></i> Spotify API
-                </div>
-            </div>
-        </div>
-    </article>
-    <article>
-        <div class="img-wrapper">
-            <img src="/images/laptop.png" alt="">
-        </div>
-        <div class="article-content">
-            <h2>
-                FERVO CASINO
-            </h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, iure repellendus dolores reiciendis perspiciatis doloremque nemo qui corporis unde placeat, ducimus molestiae ipsum voluptatem voluptatibus ut quia. Neque culpa accusantium reprehenderit sed, libero aliquid qui! Temporibus, tempore. Inventore eius praesentium, nam, accusantium alias voluptas illo nostrum vero voluptatibus beatae maiores.
-            </p>
-            <div class="badges-wrapper">
-                <div class="badge angular-badge">
-                     <i class="devicon-angular-plain"></i> Angular
-                </div>
-                <div class="badge spotify-badge">
-                    <i class="bi bi-spotify"></i> Spotify API
-                </div>
-            </div>
-        </div>
-    </article>
-    <article>
-        <div class="img-wrapper">
-            <img src="/images/laptop.png" alt="">
-        </div>
-        <div class="article-content">
-            <h2>
-                CAREMATCH
-            </h2>
-            <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, iure repellendus dolores reiciendis perspiciatis doloremque nemo qui corporis unde placeat, ducimus molestiae ipsum voluptatem voluptatibus ut quia. Neque culpa accusantium reprehenderit sed, libero aliquid qui! Temporibus, tempore. Inventore eius praesentium, nam, accusantium alias voluptas illo nostrum vero voluptatibus beatae maiores.
-            </p>
-            <div class="badges-wrapper">
-                <div class="badge angular-badge">
-                     <i class="devicon-angular-plain"></i> Angular
-                </div>
-                <div class="badge spotify-badge">
-                    <i class="bi bi-spotify"></i> Spotify API
-                </div>
-            </div>
-        </div>
-    </article> -->
 </section>
