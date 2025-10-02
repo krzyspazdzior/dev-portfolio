@@ -39,7 +39,7 @@ article:hover {
     transform: translateY(-15px);
 }
 article:hover .icon{
-    transform: rotate(360deg);
+    transform: rotateY(180deg);
     background-color: #029affe0;
     border-radius: 38px;
     padding: 35px;
@@ -110,6 +110,7 @@ article a{
     cursor: pointer;
     width: fit-content;
     border-radius: 10px;
+    border-top-left-radius: 0px;
     padding: 5px 8px 5px 8px;
     margin-left: -8px;
     font-weight: 600;

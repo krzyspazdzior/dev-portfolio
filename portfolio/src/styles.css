@@ -89,8 +89,6 @@ section{
   background-color: #ffffff18;
   position: relative;
   transition: all 0.3s ease-in-out;
-  padding-block: 0.5rem;
-  padding-inline: 1.25rem;
   border-radius: 15px;
   display: flex;
   gap: 100px;
@@ -102,8 +100,7 @@ section{
   overflow: hidden;
   font-size: 15px;
   border: 0;
-  width: 125px;
-  height: 40px;
+
 }
 
 .button .icon {
@@ -127,8 +124,10 @@ section{
   animation: shine 1.5s ease-out infinite;
 }
 .button > a{
+  z-index: 1000;
+  padding: 0.7rem 1rem;
   font-family: 'Satoshi-Variable';
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1px;
   display: flex;
   gap: 10px;
@@ -180,4 +179,11 @@ h5{
     width: 100%;
     justify-content: center;
     align-items: center;
+}
+.title-area h1{
+    font-family: 'Satoshi-Variable', sans-serif;
+    color: #bcbcc0;
+    font-weight: 900;
+    font-size: 45px;
+    text-align: center;
 }

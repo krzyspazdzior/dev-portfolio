@@ -1,0 +1,287 @@
+section{
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+    height: 120vh;
+    background-color: #ffffff00;
+}
+img{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);  
+    z-index: -1;
+}
+.title-area{
+    padding: 35px 0 0 0;
+    z-index: 20;
+}
+h1{
+    width: 40%;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    color: var(--font-secondary);
+    font-weight: 600;
+    gap: 5px;
+    padding: 30px;
+    width: 100%;
+    border-radius: 15px;
+}
+form input, form textarea{
+    background-color: hsla(240, 26%, 22%, 0.394);
+    padding: 20px 17px;
+    border: 0;
+    border-radius: 5px;
+    width: 100%;
+    color: #ffffffd1;
+    font-size: 17px;
+    margin-bottom: 10px;
+    backdrop-filter: blur(7px) saturate(120%);
+    transition: all 0.3s;
+}
+form input:focus, form textarea:focus{
+    outline: none;
+        backdrop-filter: blur(7px) saturate(200%);
+}
+form label{
+    color: #9897cbc8;
+    font-size: 18px;
+}
+form textarea{
+    resize: none;
+    font-family: 'Switzer', sans-serif;
+}
+.form-wrapper{
+    flex-basis: 45%;
+    display: flex;
+    position: relative;
+    align-items: center;
+    
+}
+.my-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10%;
+    flex-basis: 45%;
+    color: #c3c2f0c8;
+}
+.my-contact i{
+    padding: 20px 30px;
+    font-size: 75px;
+    border-radius: 9999px;
+    border: 2px solid #c3c2f0c8;
+    filter: drop-shadow(0 0 6px #c3c2f0c8);
+}
+.contact-content{
+    display: flex;
+    width: 100%;
+}
+.my-email{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+.my-phone{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+}
+.c-item{
+    width: 100%;
+}
+.submit-btn{
+    font-family: 'Switzer', sans-serif;
+    color: #f5f5f58d;
+    font-weight: 800;
+    border: 0;
+    background-color: #9897cb4e;
+    backdrop-filter: blur(7px) saturate(200%);
+    border-radius: 9999px;
+    padding: 15px 15px 15px 15px;
+    font-size: 18px;
+   margin: 0 auto;
+    width: 30%;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+    position: relative;
+}
+.submit-btn:hover{
+    backdrop-filter: blur(15px) saturate(300%);
+
+}
+.rocket.rocket.rocket{
+    z-index: 100;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    transform: rotate(91.5deg);
+    top: 28%;
+    left: 15%;
+    opacity: 0;
+}
+.submit-btn:hover .rocket{
+    transition: all 0.3s ease;
+    opacity: 1;
+    
+}
+.submit-btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    z-index: 20;
+    background: #ffffff0a;
+    transition: width 1.75s ease;
+        backdrop-filter: blur(6px) saturate(300%);
+
+}
+.submit-btn.flying::before {
+    width: 100%;
+}
+
+.rocket-fly.rocket-fly.rocket-fly.rocket-fly.rocket-fly{
+    color: #fff;
+    transform: rotate(91.5deg) translate(-50%, -50%) translateY(-300px) ;
+    transition: all 1.75s ease,
+                text-shadow 0.3s;
+    text-shadow: 0 10px 3px rgb(245, 63, 31);
+    opacity: 1;
+}
+.submit-btn p{
+    z-index: 10;
+}
+#validator{
+    color: #fff;
+    height: 20px;
+    opacity: 0;
+    transition: 0.5s all;
+}
+#validator.validator-wrong{
+    color: rgb(239, 68, 68);
+    filter: drop-shadow(0 0 10px rgb(239, 68, 68));
+    opacity: 1;
+}
+#validator.validator-valid{
+    color: rgb(150, 255, 147);
+    filter: drop-shadow(0 0 10px rgb(150, 255, 147));
+    opacity: 1;
+}
+
+.business-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+  width: 525px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  overflow: hidden;
+transform: perspective(1000px) rotateX(6deg) rotateY(-6deg);  
+box-shadow: 15px 15px 15px 2px #00000043;
+transition: transform 0.2s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.business-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px; /* grubość efektu */
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.059), transparent 60%) top left,
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.049), transparent 60%) top right,
+    radial-gradient(circle at bottom left, rgba(255, 255, 255, 0.073), transparent 60%) bottom left,
+    radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.056), transparent 60%) bottom right;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
+    pointer-events: none;
+}
+
+
+
+.business-card::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: -50%;
+    width: 200%;
+    height: 300%;
+    background: linear-gradient(120deg,
+    transparent,
+    rgba(255,255,255,0.2),
+    transparent);
+    transform: rotate(25deg);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.business-card:hover::after {
+    opacity: 1;
+    animation: shine 1.5s forwards;
+}
+.line{
+    height: 2px;
+    width: 92%;
+    background-color: #ffffff1f;
+    margin: 5px;
+}
+.v-line.v-line{
+    width: 12%;
+    transform: rotate(90deg);
+    
+}
+.business-card h2{
+    align-self: start;
+    /* font-family: 'Satoshi-Variable', sans-serif; */
+    font-family: 'Panching';
+    line-height: 27px;
+    margin-bottom: auto;
+    padding: 30px;
+    text-shadow: 0 0 15px #0395f7e5;
+    
+}
+.business-card .card-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+.business-card p{
+    display: flex;
+    font-size: 13px;
+}
+.card-bottom p{
+    text-align: end;
+    margin-left: auto;
+
+}
+.card-bottom p:first-child{
+    text-align: start;
+    margin-right: auto;
+    margin-left: 0;
+}
+

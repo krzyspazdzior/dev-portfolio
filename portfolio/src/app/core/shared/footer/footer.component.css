@@ -1,0 +1,6 @@
+footer{
+    display: flex;
+    background-color: #01041e;
+    color: var(--font-secondary);
+    height: 300px;
+}

@@ -1,1 +1,51 @@
-<p>contact works!</p>
+<section id="contact">
+    <div class="title-area">
+        <h5><i class="bi bi-envelope-at-fill"></i> CONTACT</h5>
+        <h1>YOUR NEXT PROJECT STARTS HERE</h1>
+    </div>
+    <div class="contact-content">
+        <div class="my-contact">
+            <div class="business-card"  (mousemove)="onCardMove($event)"
+     (mouseleave)="resetCard()"
+     [style.transform]="cardTransform">
+
+
+                <h2>KRZYSZTOF<br>PAŹDZIOR.</h2>
+                
+
+                <div class="line"></div>
+                <div class="card-bottom">
+                    <p>
+                        pazdzior.krzysztof.dev&#64;gmail.com<br>
+                        pazdzior-portfolio.com<br>
+                        +48 731 231 737
+                    </p>
+                    <!-- <div class="line v-line"></div> -->
+                    <p>
+                        Gliwice,<br>
+                        Poland,<br>
+                        Earth
+                    </p>
+                </div>
+              </div>
+        </div>    
+        <div class="form-wrapper">
+            <form [formGroup]="contactForm" (submit)="onSubmit($event)">
+                <label>Name</label>
+                <input type="text" formControlName="name">
+                <label>Email</label>
+                <input type="email" formControlName="email">
+                <label>Phone</label>
+                <input type="tel" formControlName="phone">
+                <label>Content</label>
+                <textarea name="" id="" rows="4" formControlName="content"></textarea>
+                <p id="validator"></p>
+                <button class="submit-btn" [ngClass]="{'flying': rocketFlying}">
+    SEND <i class="bi bi-rocket-fill rocket" [ngClass]="{'rocket-fly': rocketFlying}"></i>
+</button>
+            </form>
+        </div>
+    </div>   
+     
+    <img src="backgrounds/contact-bg-2.webp" alt="">
+</section>
