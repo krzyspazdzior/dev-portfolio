@@ -1,6 +1,124 @@
 footer{
     display: flex;
+    flex-direction: column;
     background-color: #01041e;
+    padding: 0 50px 50px 50px;
+    gap: 80px;
+}
+
+.content-wrapper{
+    display: flex;
+    justify-content: space-evenly;
     color: var(--font-secondary);
-    height: 300px;
+    height: 200px;
+}
+
+.content-wrapper>*{
+    width: 33%;
+}
+footer .content-wrapper>p{
+    font-family: 'Switzer', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+    display: flex;
+}
+ul h2{
+    margin-bottom: 20px;
+}
+ul{
+    display: flex;
+    list-style: none;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+}
+li{
+    display: flex;
+    letter-spacing: 1px;
+    color: var(--font-secondary);
+}
+
+a{
+    color: inherit;
+    text-align: start;
+    display: flex;
+    text-decoration: none;
+    font-weight: 500;
+    justify-content: start;
+    align-items: center;
+    height: 35px;
+    width: 125px;
+    font-weight: 400;
+    border-radius: 15px;
+    
+}
+ul a:hover{
+    transition: 0.6s all ease;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+ul h2{
+    font-size: 18px;
+    color: #ffffff42;
+    text-shadow: 10px 10px 1px #ffffff;
+    font-weight: 900;
+}
+h2{
+    display: flex;
+    justify-content: center;
+    width: 125px;
+    font-weight: 500;
+}
+#nav-ul h2{
+    justify-content: start;
+}
+#nav-ul{
+    align-items: end;
+}
+#contact-ul li{
+    height: 35px;
+    letter-spacing: 1px;
+}
+.social-wrapper{
+    display: flex;
+}
+
+.footer-bottom{
+    display: flex;
+    justify-content: space-around;
+    color: var(--font-secondary);
+}
+.footer-bottom>*{
+    width: 33%;
+    justify-content: center;
+}
+.footer-bottom .left-wrapper{
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+}
+.left-wrapper p{
+    color: #ffffff80;
+    font-size: 18px;
+    font-weight: 500;
+}
+.bottom-info *{
+    font-size: 16px;
+    text-align: end;
+}
+.bottom-info{
+    display: flex;
+    flex-direction: column;
+}
+footer .footer-bottom>a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 500;
+    text-decoration: underline;
+    width: 100%;
+
 }
