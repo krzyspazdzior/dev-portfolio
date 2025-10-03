@@ -9,18 +9,19 @@
         <div class="whole-monitor">
 
             <div class="monitor">
-            <div class="screen">
-                <p class="screen-info">NO SIGNAL</p>
-                <img src="/backgrounds/charts.webp" alt="">
+                <div class="screen">
+                    <p class="screen-info">NO SIGNAL</p>
+                    <img src="/backgrounds/charts.webp" alt="">
                     <div class="loading-bar-container" *ngIf="loading">
-        <div class="loading-bar" [style.width.%]="loadingProgress"></div>
-    </div>
+                        <div class="loading-bar" [style.width.%]="loadingProgress"></div>
+                    </div>
             </div>
             <div class="stand"></div>
             <div class="base"></div>
             <p>Interactive dashboard prototype</p>
         </div>
-    </div>
+
+        </div>
 <svg #cableSvg class="cable" viewBox="100 50 300 50" preserveAspectRatio="xMidYMid meet">
   <path class="base"
         d="M 400 75 Q 350 50, 300 75 T 200 75 T 100 75"
@@ -45,4 +46,5 @@
     </div>
     <div class="side-circle"></div>
     <div class="side-circle neon"></div>
+    
 </section>

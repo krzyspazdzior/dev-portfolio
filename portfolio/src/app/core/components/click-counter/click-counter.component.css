@@ -33,6 +33,8 @@ svg{
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 20px;
+  position: relative;
 }
 .monitor .screen p{
   position: absolute;
@@ -53,7 +55,7 @@ svg{
 .monitor .screen {
   width: 400px;
   height: 270px;
-  background: #00000c;
+  background: linear-gradient(180deg, #0a0a0a, #11151a);
   border: 3px solid #171717;
   border-radius: 8px;
   display: flex;
@@ -67,9 +69,9 @@ svg{
   overflow: hidden;
   filter: drop-shadow(0 0 150px #ffffff44);
   transition: filter 1s;
-}
-.monitor .screen p span{
-    color: #0395f7;
+  box-shadow:
+    inset 0 2px 6px rgba(255,255,255,0.1),
+    inset 0 -2px 8px rgba(0,0,0,0.7);
 }
 .monitor .screen::before {
   content: '';
@@ -78,25 +80,83 @@ svg{
   width: 100%; height: 100%;
   border-radius: 8px;
   pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.12) 0%, transparent 60%),
+    linear-gradient(45deg, rgba(255,255,255,0.06) 0%, transparent 70%);
+  mix-blend-mode: screen;
+  z-index: 5;
+}
+.monitor .screen::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border-radius: 8px;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 1px,
+      transparent 2px,
+      transparent 4px
+    ),
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4" fill="none"><circle cx="2" cy="2" r="0.5" fill="rgba(255,255,255,0.03)"/></svg>');
+  mix-blend-mode: overlay;
+  z-index: 6;
 }
 
+.monitor .screen p span{
+    color: #0395f7;
+}
 .monitor .stand {
   width: 20px;
   height: 40px;
-  background: linear-gradient(#262626, #000000);
+  background: linear-gradient(145deg, #6e6e6e, #2a2a2a);
   border-radius: 3px;
   margin: -2px 0 0 0;
+  box-shadow:
+    inset 0 2px 4px #9a9a9a,
+    inset 0 -2px 4px #1f1f1f,
+    0 3px 6px rgba(0,0,0,0.8);
+  position: relative;
+}
+.monitor .stand::before {
+  content: '';
+  position: absolute;
+  top: 5px; left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 10px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.15), transparent 80%);
+  border-radius: 3px;
+  pointer-events: none;
 }
 
 .monitor .base {
   width: 120px;
   height: 15px;
-  background: linear-gradient(#1b1b1b, #111111);
+  background: linear-gradient(145deg, #8a8a8a, #1c1c1c);
   border-radius: 6px;
   border-bottom-left-radius: 0px;
   border-bottom-right-radius: 0px;
   margin: -2px 0 0 0;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  box-shadow:
+    inset 0 2px 5px #b0b0b0,
+    inset 0 -2px 6px #1a1a1a,
+    0 4px 12px rgba(0,0,0,0.7);
+  position: relative;
+}
+.monitor .base::before {
+  content: '';
+  position: absolute;
+  top: 3px; left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  height: 5px;
+  background: linear-gradient(90deg, rgba(255,255,255,0.2), transparent 80%);
+  border-radius: 6px;
+  pointer-events: none;
 }
 
 .monitor p{
@@ -221,10 +281,11 @@ svg{
 .monitor img{
     opacity: 0;
     margin-bottom: auto;
-    width: 86%;
-    height: 225px;
+    width: 90%;
+    height: 230px;
     border-radius: 8px;
     z-index: 100;
+    position: relative;
 }
 .loading-bar-container {
     display: flex;
@@ -262,7 +323,23 @@ svg{
     opacity: 1;
     transition: all 1s;
 }
+.monitor .screen.active-screen{
+  transition: all 0.3s; 
+  background: #00000c;
+  box-shadow:
+   none;
+}
+.monitor .screen.active-screen::before {
+  transition: all 0.3s;
+  background: none;
+  mix-blend-mode: normal;
+}
+.monitor .screen.active-screen::after {
+    transition: all 0.3s;
 
+  background: none;
+  mix-blend-mode: normal;
+  }
 @keyframes monitorGlow{
     0%{
         filter: drop-shadow(0 0 0px #06d9f135);

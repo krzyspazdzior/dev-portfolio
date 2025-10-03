@@ -44,6 +44,7 @@ onSubmit(event: Event){
     validatorP?.classList.add("validator-valid");
     (validatorP as HTMLElement).innerHTML = "Form submitted successfully!"
     console.log(this.contactForm);
+    this.contactForm.reset();
   
 
 }

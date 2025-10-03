@@ -76,8 +76,10 @@ onButtonClick() {
 
   }
   const img = document.querySelector(".monitor img");
-  if(img){
+  const screen = document.querySelector(".monitor .screen");
+  if(img && screen){
           setTimeout(() => img.classList.add("img-glow"), 8100);
+          setTimeout(() => screen.classList.add("active-screen"), 8100);
 
   }
 

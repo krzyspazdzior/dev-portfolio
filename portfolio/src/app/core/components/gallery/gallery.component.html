@@ -68,6 +68,7 @@
             @for(img of imgs; track $index) {
                 <img [src]="img" alt="" [class.active-img]="activeIndex === $index">
             }
+            <p [class.active-p]="activeIndex == 0"><a>VISIT WEBSITE</a> <i class="bi bi-box-arrow-up-right"></i></p>
         </div>
     </div>
 </section>

@@ -132,6 +132,7 @@ p{
 }
 .browser-result{
     display: flex;
+    position: relative;
 }
 .browser-result img{
     user-select: none;
@@ -254,6 +255,7 @@ p{
     border: 1px solid #ffffff3d;
     border-radius: 8px;
     font-size: 15px;
+    z-index: 300;
 }
 .dropdown-active{
     display: flex;
@@ -298,4 +300,40 @@ li:hover{
 .tab h5:hover{
     background-color: #ffffff18;
     border-radius: 3px;
+}
+.browser-result p{
+    text-decoration: underline;
+    justify-content: space-around;
+    gap: 20px;
+    align-items: center;
+    font-size: 20px;
+    opacity: 0;
+    display: none;
+    position: absolute;
+    top:90%;
+    left: 50%;
+    transform: translate(-50%, -50%)translateY(8px);
+    z-index: 200;
+    font-weight: 900;
+
+}
+
+.browser-result p.active-p{
+    display: flex;
+}
+.browser-result p.active-p a{
+    color: var(--font-secondary);
+
+}
+.browser-result:hover p.active-p{
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%)translateY(0px);
+    opacity: 1;
+}
+
+.browser-result:hover img.active-img {
+    transition: all 0.5s ease;
+}
+.browser-result p.active-p{
+    cursor: pointer;
 }
