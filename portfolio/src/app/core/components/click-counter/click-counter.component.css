@@ -1,9 +1,9 @@
 section{
     position: relative;
     overflow: hidden;
-    height: 100vh;
+  gap: 75px;
     justify-content: space-evenly;
-    padding: 35px;
+        padding: 35px;
     padding-top: 85px;
 }
 h1{
@@ -419,4 +419,39 @@ h5{
   border: 0px solid #0395f7;
  box-shadow: 0 0 5px #0ff,         
               0 0 30px #0ff; 
+}
+
+
+@media (width <= 900px){
+  .clicker-area{
+    flex-direction: column-reverse;
+    
+  }
+  .whole-monitor #under-p{
+    display: none;
+  }
+  svg{
+    transform: rotate(270deg);
+    height: 220px;
+  }
+  .clicker-area{
+      padding: 50px 0;
+  }
+  .pushable{
+    transform: scale(1);
+  }
+  section{
+    gap: 10px;    
+  }
+  .whole-monitor{
+    transform: scale(0.7);
+    z-index: 10;
+  }
+  .title-area h1{
+    font-size: 30px;
+    width: 90%;
+  }
+  .title-area h5{
+    font-size: 15px;
+  }
 }

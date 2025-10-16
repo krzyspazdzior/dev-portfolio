@@ -3,7 +3,7 @@ section{
     align-items: center;
     position: relative;
     padding: 20px;
-    height: 120vh;
+    /* height: 120vh; */
     background-color: #ffffff00;
 }
 img{
@@ -31,6 +31,7 @@ form{
     padding: 30px;
     width: 100%;
     border-radius: 15px;
+
 }
 form input, form textarea{
     background-color: hsla(240, 26%, 22%, 0.394);
@@ -81,6 +82,8 @@ form textarea{
 }
 .contact-content{
     display: flex;
+            margin-bottom: 200px;
+
     width: 100%;
 }
 .my-email{
@@ -285,3 +288,31 @@ transition: transform 0.2s ease;
     margin-left: 0;
 }
 
+@media (width <= 900px){
+    .title-area h1{
+        width: 100%;
+        font-size: 30px;
+    }
+    .contact-content{
+        flex-direction: column-reverse;
+        margin-bottom: 150px;
+    }
+    .business-card{
+        width: 90vw;
+        height: 225px;
+        margin: 100px 0;
+    }
+    .submit-btn{
+        width: 150px;
+    }
+
+    form{
+        width: 90%;
+        padding: 30px 0;
+        padding: 0;
+        margin: 0 auto;
+    }
+    section{
+        height: auto;
+    }
+}

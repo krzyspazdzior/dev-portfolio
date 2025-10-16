@@ -1,5 +1,6 @@
 section{
   padding-top: 20px;
+  flex-direction: row;
 }
 
 #angular-hex {
@@ -49,9 +50,7 @@ h1{
     width: 400px;
     border-radius: 15px;
 }
-section{
-    flex-direction: row;
-}
+
 .img-blur{
     position: absolute;
     width: 100%;
@@ -183,4 +182,33 @@ font-size: 40px;
 #node:hover {
   background-color: #5ea04e82;
   transition: all 0.5s;
+}
+@media (width <= 1200px){
+    section .img-wrapper img{
+      display: none;
+    }
+    
+    .hex{
+      width: 80px;
+    height: 85px; 
+    font-size: 30px;
+    }
+    .hex-row{
+        gap: 4.2px;
+    }
+
+.row-2 {
+  margin-top: -20px;
+}
+
+.row-3 {
+  margin-top: -20px;
+}
+section{
+  flex-direction: column;
+}
+section p{
+  font-size: 13px;
+  width: 80%;
+}
 }

@@ -65,8 +65,12 @@
             </div>
         </div>
         <div class="browser-result">
+            
             @for(img of imgs; track $index) {
-                <img [src]="img" alt="" [class.active-img]="activeIndex === $index">
+                <img [src]="img" alt="" [class.active-img]="activeIndex === $index" class="pc-img">
+            }
+            @for(img of imgsPhone; track $index) {
+                <img [src]="img" alt="" [class.active-phone]="activeIndex === $index" class="mobile-img">
             }
             <p [class.active-p]="activeIndex == 0"><a>VISIT WEBSITE</a> <i class="bi bi-box-arrow-up-right"></i></p>
         </div>

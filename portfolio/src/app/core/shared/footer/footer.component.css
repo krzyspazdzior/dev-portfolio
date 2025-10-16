@@ -122,3 +122,36 @@ footer .footer-bottom>a{
     width: 100%;
 
 }
+@media (width <= 900px){
+    .content-wrapper{
+        flex-direction: column;
+        height: auto;
+        gap: 30px;
+    }
+    .content-wrapper p{
+        text-align: center;
+    }
+    .content-wrapper>*{
+        width: 100%;
+    }
+    .content-wrapper ul#nav-ul{
+        width: 100%;
+        align-items: center;
+    }
+    .footer-bottom *{
+        font-size: 12px !important;
+        width: 50%;
+    }
+    .bottom-info>*{
+        width: 100%;
+    }
+    .left-wrapper>*{
+        width: 100%;
+    }
+    #nav-ul a{
+        justify-content: center;
+    }
+    footer{
+        padding: 0 20px 20px 20px;
+    }
+}

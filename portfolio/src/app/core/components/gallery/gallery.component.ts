@@ -10,6 +10,7 @@ export class GalleryComponent {
     titles = ['Dribble Music', 'CareMatch', 'Rhytmify', 'Fervo Casino', 'Rescript']; 
     icons = ['images/dribble_icon.png', 'images/carematch_icon.png','images/rythmify_icon.png', 'images/fervo_icon.png', 'images/rescript_icon.png'];
     imgs = ['images/dribble_pc.png', 'images/carematch_pc.png', 'images/rythmify_pc.png', 'images/fervo_pc.png', 'images/rescript_pc.png'];
+    imgsPhone = ['images/dribble_mobile.png', 'images/carematch_mobile.png', 'images/rythmify_mobile.png', 'images/fervo_mobile.png', 'images/rescript_mobile.png'];
     links = ['dribble-music.com', 'carematch.com', 'rhytmify.com', 'fervo.com', 'rescript.dev'];
     hrefs = [];
     activeIndex: number = 0
@@ -17,7 +18,6 @@ export class GalleryComponent {
     setActive(i:number){
       this.activeIndex = i;
     }
-
     refresh(){
       const img = document.querySelector(".active-img");
       if(img){
