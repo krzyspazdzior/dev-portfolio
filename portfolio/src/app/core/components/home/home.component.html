@@ -1,12 +1,13 @@
 <app-header></app-header>
 <section class="landing-page" id="home">
+        
         <img src="backgrounds/background-forest.webp" alt="background">
         <div class="landing-content">
              <h1 class="light-onload">WEB DEV / PAZDZIOR</h1>
-             <p>I specialize in turning concepts into functional web solutions using modern frameworks, responsive design, and clear communication to ensure every project meets expectations and exceeds goals.</p>
+             <p>{{'HOME.SUBTITLE' | translate}}</p>
                 <div class="button-wrapper">
-                        <a class="landing-btn contact-btn" href="">CONTACT ME</a>
-                        <a class="landing-btn about-btn" href="#about-me">ABOUT</a>
+                        <a class="landing-btn contact-btn" href="">{{ 'HOME.CONTACT_ME_BTN' | translate }}</a>
+                        <a class="landing-btn about-btn" href="#about-me">{{ 'HOME.ABOUT_BTN' | translate }}</a>
                 </div>
         </div>
 </section>
