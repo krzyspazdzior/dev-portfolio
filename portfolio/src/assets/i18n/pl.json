@@ -1,10 +1,10 @@
 {
   "HEADER": {
-    "HOME": "STRONA GŁÓWNA",
-    "ABOUT": "O MNIE",
-    "SKILLS": "UMIEJĘTNOŚCI",
-    "PROJECTS": "PROJEKTY",
-    "CONTACT": "KONTAKT"
+    "1": "STRONA GŁÓWNA",
+    "2": "O MNIE",
+    "3": "UMIEJĘTNOŚCI",
+    "4": "PROJEKTY",
+    "5": "KONTAKT"
   },
   "HOME": {
     "TITLE": "WEB DEV / PAŹDZIOR",
@@ -34,11 +34,12 @@
   "DEMO": {
     "SUBTITLE": "INTERAKTYWNE DEMO",
     "TITLE": "NIE TYLKO KOD. DOŚWIADCZENIE",
-    "BTN": "SPRAWDŹ MNIE"
+    "BTN": "KLIKNIJ",
+    "P": "Prototyp interaktywnego pulpitu nawigacyjnego"
   },
   "GALLERY": {
     "SUBTITLE": "PROJEKTY",
-    "TITLE": "ZOBACZ MOJE REALIZACJE",
+    "TITLE": "ZOBACZ MOJE PROJEKTY",
     "A": "ODWIEDŹ STRONĘ"
   },
   "CONTACT": {
@@ -53,9 +54,6 @@
   "FOOTER": {
     "P": "Zamieniam pomysły w nowoczesne, responsywne strony internetowe.",
     "SUBTITLE_1": "KONTAKT",
-    "SUBTITLE_2": "NAWIGACJA",
-    "CONTACT_1": "PAZDZIOR.KRZYSZTOF.DEV@GMAIL.COM",
-    "CONTACT_2": "PAZDZIOR-PORTFOLIO.COM",
-    "CONTACT_3": "+48 731 231 737"
+    "SUBTITLE_2": "NAWIGACJA"
   }
 }

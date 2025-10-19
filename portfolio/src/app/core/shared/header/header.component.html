@@ -3,12 +3,16 @@
     <header>
         <nav>
             <ul>
-                    <a class='nav-link' href='#home'><li>HOME</li></a>
-                    <a class='nav-link' href="#about-me"><li>ABOUT ME</li></a>
-                    <a class='nav-link' href="#skills"><li>SKILLS</li></a>
-                    <a class='nav-link' href="#gallery"><li>PROJECTS</li></a>
+                    <a class='nav-link' href='#home'><li>{{"HEADER.1" | translate}}</li></a>
+                    <a class='nav-link' href="#about-me"><li>{{"HEADER.2" | translate}}</li></a>
+                    <a class='nav-link' href="#skills"><li>{{"HEADER.3" | translate}}</li></a>
+                    <a class='nav-link' href="#gallery"><li>{{"HEADER.4" | translate}}</li></a>
                 </ul>
             </nav>
+            <select id="translate-dropdown" (change)="switchLang($event)">
+                <option value="en">EN</option>
+                <option value="pl">PL</option>
+            </select>
             <button class='login-btn button'><a href="#contact"> <span>Contact</span><i class="bi bi-arrow-right-circle-fill"></i></a></button>
             <div class="hamburger">
                 <div class="bar1"></div>

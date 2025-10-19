@@ -207,3 +207,12 @@ button{
   transform: scale(1.15);
 }
 }
+#translate-dropdown{
+  margin-left: auto;
+  font-size: 22px;
+  background-color: transparent;
+  color: #d2d2d29d;
+  border: 0;
+  margin-right: 15px;
+  
+}

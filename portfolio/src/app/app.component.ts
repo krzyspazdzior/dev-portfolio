@@ -12,15 +12,10 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class AppComponent {
   constructor(private translate: TranslateService) {
-    // Rejestracja języków
+
     this.translate.addLangs(['en', 'pl']);
     this.translate.setFallbackLang('en');
     this.translate.use('en');
 
-  }
-
-  // Zmiana języka z przycisku
-  switchLang(lang: string) {
-    this.translate.use(lang);
   }
 }

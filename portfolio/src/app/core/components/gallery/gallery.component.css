@@ -190,7 +190,7 @@ p{
     position: relative;
     z-index: 20;
 }
-#menu::after{
+/* #menu::after{
     font-size: 14px;
     font-weight: 400;
     font-style: normal;
@@ -228,7 +228,7 @@ p{
         filter: none;
         color: var(--font-secondary);
     }
-}
+} */
 
 .tab img{
     user-select: none;
@@ -237,7 +237,7 @@ p{
 .tab img:nth-child(1), .tab img:nth-child(2){
     width: 20px;
 }
-.dropdown{
+/* .dropdown{
     display: none;
     color: #fff;
     right: 0;
@@ -252,7 +252,7 @@ p{
 }
 .dropdown-active{
     display: flex;
-}
+} */
 .extensions>div{
     position: relative;
 }

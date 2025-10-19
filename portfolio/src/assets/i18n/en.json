@@ -1,10 +1,10 @@
 {
   "HEADER": {
-    "HOME": "HOME",
-    "ABOUT": "ABOUT",
-    "SKILLS": "SKILLS",
-    "PROJECTS": "PROJECTS",
-    "CONTACT": "Contact"
+    "1": "HOME",
+    "2": "ABOUT",
+    "3": "SKILLS",
+    "4": "PROJECTS",
+    "5": "Contact"
   },
   "HOME": {
     "TITLE": "WEB DEV / PAZDZIOR",
@@ -34,6 +34,7 @@
   "DEMO": {
     "SUBTITLE": "INTERACTIVE DEMO",
     "TITLE": "NOT JUST CODE. EXPERIENCES",
+    "P": "Interactive dashboard prototype",
     "BTN": "PUSH ME"
   },
   "GALLERY": {
@@ -53,9 +54,6 @@
   "FOOTER": {
     "P": "Turning concepts into responsive, user-friendly websites",
     "SUBTITLE_1": "CONTACT",
-    "SUBTITLE_2": "NAVIGATION",
-    "CONTACT_1": "PAZDZIOR.KRZYSZTOF.DEV@GMAIL.COM",
-    "CONTACT_2": "PAZDZIOR-PORTFOLIO.COM",
-    "CONTACT_3": "+48 731 231 737"
+    "SUBTITLE_2": "NAVIGATION"
   }
 }

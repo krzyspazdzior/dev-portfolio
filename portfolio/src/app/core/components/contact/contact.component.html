@@ -1,7 +1,7 @@
 <section id="contact">
     <div class="title-area">
-        <h5><i class="bi bi-envelope-at-fill"></i> CONTACT</h5>
-        <h1>YOUR NEXT PROJECT STARTS HERE</h1>
+        <h5><i class="bi bi-envelope-at-fill"></i> {{"CONTACT.SUBTITLE" | translate}}</h5>
+        <h1>{{"CONTACT.TITLE" | translate}}</h1>
     </div>
     <div class="contact-content">
         <div class="my-contact">
@@ -31,17 +31,17 @@
         </div>    
         <div class="form-wrapper">
             <form [formGroup]="contactForm" (submit)="onSubmit($event)">
-                <label>Name</label>
+                <label>{{"CONTACT.LABEL_1" | translate}}</label>
                 <input type="text" formControlName="name">
-                <label>Email</label>
+                <label>{{"CONTACT.LABEL_2" | translate}}</label>
                 <input type="email" formControlName="email">
-                <label>Phone</label>
+                <label>{{"CONTACT.LABEL_3" | translate}}</label>
                 <input type="tel" formControlName="phone">
-                <label>Content</label>
+                <label>{{"CONTACT.LABEL_4" | translate}}</label>
                 <textarea name="" id="" rows="4" formControlName="content"></textarea>
                 <p id="validator"></p>
                 <button class="submit-btn" [ngClass]="{'flying': rocketFlying}">
-    SEND <i class="bi bi-rocket-fill rocket" [ngClass]="{'rocket-fly': rocketFlying}"></i>
+    {{"CONTACT.SUBMIT" | translate}} <i class="bi bi-rocket-fill rocket" [ngClass]="{'rocket-fly': rocketFlying}"></i>
 </button>
             </form>
         </div>

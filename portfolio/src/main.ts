@@ -1,7 +1,6 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { AppComponent } from './app/app.component';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
 
 bootstrapApplication(AppComponent, appConfig)

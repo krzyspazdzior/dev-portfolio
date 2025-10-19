@@ -1,13 +1,25 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { After } from 'node:v8';
+import { TranslatePipe } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit, AfterViewInit{
+
+  currentLang = 'pl';
+
+  constructor(private translate: TranslateService) {}
+
+  switchLang(event: Event) {
+    const select = event.target as HTMLSelectElement;
+    const lang = select.value;
+    this.translate.use(lang);
+  }
+
   ngOnInit(){
     window.addEventListener('scroll', function() {
         const header = document.querySelector('header');
