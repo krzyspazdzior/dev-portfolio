@@ -4,7 +4,7 @@
     "2": "O MNIE",
     "3": "UMIEJĘTNOŚCI",
     "4": "PROJEKTY",
-    "5": "KONTAKT"
+    "5": "Współpraca"
   },
   "HOME": {
     "TITLE": "WEB DEV / PAŹDZIOR",
@@ -49,7 +49,9 @@
     "LABEL_2": "Email",
     "LABEL_3": "Telefon",
     "LABEL_4": "Treść wiadomości",
-    "SUBMIT": "WYŚLIJ"
+    "SUBMIT": "WYŚLIJ",
+    "CORRECT": "Formularz wysłany pomyślnie!",
+    "INCORRECT": "Wypełnij poprawnie wszystkie pola."
   },
   "FOOTER": {
     "P": "Zamieniam pomysły w nowoczesne, responsywne strony internetowe.",

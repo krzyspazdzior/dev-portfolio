@@ -49,7 +49,9 @@
     "LABEL_2": "Email",
     "LABEL_3": "Phone",
     "LABEL_4": "Content",
-    "SUBMIT": "SEND"
+    "SUBMIT": "SEND",
+    "CORRECT": "Form submitted successfully!",
+    "INCORRECT": "Fill all fields correctly."
   },
   "FOOTER": {
     "P": "Turning concepts into responsive, user-friendly websites",

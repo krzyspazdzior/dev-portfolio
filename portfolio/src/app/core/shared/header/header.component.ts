@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -8,23 +8,26 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit, AfterViewInit{
+export class HeaderComponent implements OnInit{
 
-  currentLang = 'pl';
+  currentLang = localStorage.getItem('lang');
 
   constructor(private translate: TranslateService) {}
 
   switchLang(event: Event) {
     const select = event.target as HTMLSelectElement;
+    
+    
     const lang = select.value;
     this.translate.use(lang);
+    localStorage.setItem('lang', lang); 
   }
 
   ngOnInit(){
     window.addEventListener('scroll', function() {
-        const header = document.querySelector('header');
-        const navA = document.querySelectorAll('.nav-link');
-        const headerBtn = document.querySelector('.login-btn');
+      const header = document.querySelector('header');
+      const navA = document.querySelectorAll('.nav-link');
+      const headerBtn = document.querySelector('.login-btn');
         const scrollTop = window.scrollY || document.documentElement.scrollTop;
     if(header && headerBtn){
       if (scrollTop > 0) {
@@ -45,20 +48,5 @@ export class HeaderComponent implements OnInit, AfterViewInit{
     });
   }
 
-  ngAfterViewInit(): void {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('nav a');
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => link.classList.remove('active'));
-          const activeLink = document.querySelector(`nav a[href="#${entry.target.id}"]`);
-          if (activeLink) activeLink.classList.add('active');
-        }
-      });
-    }, { threshold: 0.6 });
-
-    sections.forEach(section => observer.observe(section));
-  }
 }

@@ -15,7 +15,16 @@ export class AppComponent {
 
     this.translate.addLangs(['en', 'pl']);
     this.translate.setFallbackLang('en');
-    this.translate.use('en');
+    if (typeof window !== 'undefined') {
+      const savedLang = localStorage.getItem('lang');
+      if(savedLang === 'en' || savedLang === 'pl'){
+        this.translate.use(savedLang);
+      } else {
+        this.translate.use('en');
+      }
+    } else {
+      this.translate.use('en');
+    }
 
   }
 }

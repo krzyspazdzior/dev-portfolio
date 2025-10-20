@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit{
   
   contactForm!: FormGroup ;
   
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private translate: TranslateService) {}
 
     ngOnInit() {
     this.contactForm = this.fb.group({
@@ -37,13 +37,13 @@ onSubmit(event: Event){
   
   if(this.contactForm.invalid){
     validatorP?.classList.add('validator-wrong');
-    (validatorP as HTMLElement).innerHTML = "Fill all fields correctly.";
+    (validatorP as HTMLElement).innerHTML = this.translate.instant('CONTACT.INCORRECT')
     return;
   }
   
     this.launchRocket();  
     validatorP?.classList.add("validator-valid");
-    (validatorP as HTMLElement).innerHTML = "Form submitted successfully!"
+    (validatorP as HTMLElement).innerHTML = this.translate.instant('CONTACT.CORRECT')
     console.log(this.contactForm);
     this.contactForm.reset();
   

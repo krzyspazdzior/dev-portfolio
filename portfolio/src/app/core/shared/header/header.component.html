@@ -9,11 +9,11 @@
                     <a class='nav-link' href="#gallery"><li>{{"HEADER.4" | translate}}</li></a>
                 </ul>
             </nav>
-            <select id="translate-dropdown" (change)="switchLang($event)">
+            <select id="translate-dropdown" [value]="currentLang" (change)="switchLang($event)">
                 <option value="en">EN</option>
                 <option value="pl">PL</option>
             </select>
-            <button class='login-btn button'><a href="#contact"> <span>Contact</span><i class="bi bi-arrow-right-circle-fill"></i></a></button>
+            <button class='login-btn button'><a href="#contact"> <span>{{"HEADER.5" | translate}}</span><i class="bi bi-arrow-right-circle-fill"></i></a></button>
             <div class="hamburger">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
