@@ -1,20 +1,21 @@
 {
   "HEADER": {
-    "1": "STRONA GŁÓWNA",
+    "1": "GŁÓWNA",
     "2": "O MNIE",
     "3": "UMIEJĘTNOŚCI",
     "4": "PROJEKTY",
-    "5": "Współpraca"
+    "5": "Współpraca",
+    "6": "WSPÓŁPRACA"
   },
   "HOME": {
     "TITLE": "WEB DEV / PAŹDZIOR",
-    "SUBTITLE": "Specjalizuję się w przekształcaniu koncepcji w funkcjonalne rozwiązania webowe. Wykorzystuję nowoczesne frameworki, projektuję responsywnie i dbam o jasną komunikację, by każdy projekt spełniał oczekiwania i przekraczał cele.",
+    "SUBTITLE": "Tworzę funkcjonalne rozwiązania webowe, przekształcając pomysły w praktyczne projekty. Korzystam z nowoczesnych frameworków, dbam o responsywny design i przejrzystą komunikację, tak aby każdy projekt spełniał oczekiwania i przynosił realne efekty.",
     "ABOUT_BTN": "O MNIE",
     "CONTACT_ME_BTN": "SKONTAKTUJ SIĘ"
   },
   "ABOUT_ME": {
     "SUBTITLE": "O MNIE",
-    "TITLE": "COŚ WIĘCEJ NIŻ FRONTEND DEVELOPER",
+    "TITLE": "OD POMYSŁU DO DZIAŁAJĄCEJ STRONY",
     "ART_TITLE_1": "PRZYJAZNE DLA KLIENTA WIZUALIZACJE",
     "ART_TITLE_2": "PRACA ZESPOŁOWA",
     "ART_TITLE_3": "UNIWERSALNY UX",
@@ -29,7 +30,7 @@
   "SKILLS": {
     "SUBTITLE": "UMIEJĘTNOŚCI",
     "TITLE": "FULL-STACK DEVELOPER",
-    "P": "Jestem Full-Stack Developerem z doświadczeniem w tworzeniu wszystkiego — od responsywnych interfejsów mobilnych po rozbudowane aplikacje webowe. Swobodnie pracuję z bazami danych, backendem i nowoczesnymi frameworkami frontendowymi, by dostarczać kompletne i skalowalne rozwiązania."
+    "P": "„Jestem Full-Stack Developerem i tworzę wszystko — od responsywnych interfejsów mobilnych po rozbudowane aplikacje webowe. Swobodnie pracuję z backendem, bazami danych i nowoczesnymi frameworkami frontendowymi, dostarczając kompletne i skalowalne rozwiązania.”"
   },
   "DEMO": {
     "SUBTITLE": "INTERAKTYWNE DEMO",
@@ -44,7 +45,7 @@
   },
   "CONTACT": {
     "SUBTITLE": "KONTAKT",
-    "TITLE": "TWÓJ NASTĘPNY PROJEKT ZACZYNA SIĘ TUTAJ",
+    "TITLE": "TWÓJ WYJĄTKOWY PROJEKT ZACZYNA SIĘ TUTAJ",
     "LABEL_1": "Imię",
     "LABEL_2": "Email",
     "LABEL_3": "Telefon",
@@ -54,7 +55,7 @@
     "INCORRECT": "Wypełnij poprawnie wszystkie pola."
   },
   "FOOTER": {
-    "P": "Zamieniam pomysły w nowoczesne, responsywne strony internetowe.",
+    "P": "Od pomysłu do w pełni funkcjonalnej, responsywnej strony internetowej.",
     "SUBTITLE_1": "KONTAKT",
     "SUBTITLE_2": "NAWIGACJA"
   }
