@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -14,7 +15,7 @@ export class ContactComponent implements OnInit{
   
   contactForm!: FormGroup ;
   
-  constructor(private fb: FormBuilder, private translate: TranslateService) {}
+  constructor(private fb: FormBuilder, private translate: TranslateService, private http: HttpClient) {}
 
     ngOnInit() {
     this.contactForm = this.fb.group({
@@ -29,25 +30,41 @@ export class ContactComponent implements OnInit{
 
 onSubmit(event: Event){
   event.preventDefault();
-  
-  const validatorP = document.getElementById("validator");
+
   this.contactForm.markAllAsTouched();
 
+  const validatorP = document.getElementById("validator");
 
-  
   if(this.contactForm.invalid){
-    validatorP?.classList.add('validator-wrong');
-    (validatorP as HTMLElement).innerHTML = this.translate.instant('CONTACT.INCORRECT')
+    if(validatorP) {
+      validatorP.classList.add('validator-wrong');
+      validatorP.innerHTML = this.translate.instant('CONTACT.INCORRECT');
+    }
     return;
   }
-  
-    this.launchRocket();  
-    validatorP?.classList.add("validator-valid");
-    (validatorP as HTMLElement).innerHTML = this.translate.instant('CONTACT.CORRECT')
-    console.log(this.contactForm);
-    this.contactForm.reset();
-  
 
+  this.launchRocket();
+
+  const formspreeEndpoint = 'https://formspree.io/f/xqayoyle';
+
+  this.http.post(formspreeEndpoint, this.contactForm.value).subscribe({
+    next: () => {
+      if(validatorP) {
+        validatorP.classList.remove('validator-wrong');
+        validatorP.classList.add('validator-valid');
+        validatorP.innerHTML = this.translate.instant('CONTACT.CORRECT');
+      }
+      this.contactForm.reset();
+    },
+    error: () => {
+      if(validatorP) {
+        validatorP.classList.add('validator-wrong');
+        validatorP.innerHTML = this.translate.instant('CONTACT.INCORRECT');
+      }
+    }
+  });
+
+  console.log(this.contactForm);
 }
 
 
