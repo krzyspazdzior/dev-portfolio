@@ -61,7 +61,7 @@ p{
 .browser{
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 70%;
     background-color: #0e0d21;
     border-radius: 12px;
 }
@@ -406,4 +406,10 @@ li:hover{
     padding: 0;
     border: 0;
   }
+}
+
+@media (width > 1500px){
+    .browser{
+        width: 60%;
+    }
 }

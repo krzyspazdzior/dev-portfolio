@@ -122,6 +122,12 @@ footer .footer-bottom>a{
     width: 100%;
 
 }
+
+#phone{
+    color: var(--font-secondary);
+    text-decoration: none;
+}
+
 @media (width <= 900px){
     .content-wrapper{
         flex-direction: column;

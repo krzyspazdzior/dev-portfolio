@@ -203,9 +203,6 @@ button.nav-login-scroll:hover{
   padding: 18px 22px;
   font-size: 19px;
 }
-button{
-  transform: scale(1.15);
-}
 }
 #translate-dropdown{
   margin-left: auto;

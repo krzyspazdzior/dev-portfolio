@@ -1,4 +1,6 @@
-
+section{
+  height: 105vh;
+}
 
 
 /* Landing page */
@@ -17,7 +19,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
   transition: all 5s;
 }
 .landing-content{
@@ -200,7 +201,5 @@
   .landing-content h1{
     width: 60%;
   }
-  .landing-content{
-    transform: scale(1.15);
-  }
+
 }

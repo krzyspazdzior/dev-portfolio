@@ -455,3 +455,16 @@ h5{
     font-size: 15px;
   }
 }
+@media (width > 1500px){
+  .whole-monitor{
+    transform: scale(1.15);
+  }
+  .pushable{
+    transform: scale(1.4);
+  }
+  .side-circle{
+    left: 92%;
+    width: 450px;
+    height: 450px;
+  }
+}

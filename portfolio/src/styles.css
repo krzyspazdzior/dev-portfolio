@@ -66,6 +66,7 @@ body, html{
 }
 body{
   background-color: #010012;
+  overflow-x: hidden;
 }
 html{
   scroll-behavior: smooth;
