@@ -10,17 +10,26 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class HeaderComponent implements OnInit{
 
-  currentLang = localStorage.getItem('lang');
+   currentLang: string = 'en'; // domyślny język
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService) {
+    if (typeof window !== 'undefined') {
+      const lang = localStorage.getItem('lang');
+      if (lang) {
+        this.currentLang = lang;
+        this.translate.use(lang);
+      }
+    }
+  }
 
   switchLang(event: Event) {
-    const select = event.target as HTMLSelectElement;
-    
-    
-    const lang = select.value;
-    this.translate.use(lang);
-    localStorage.setItem('lang', lang); 
+    if (typeof window !== 'undefined') {
+      const select = event.target as HTMLSelectElement;
+      const lang = select.value;
+      this.translate.use(lang);
+      localStorage.setItem('lang', lang);
+      this.currentLang = lang; // aktualizacja klasy, aby HTML widział zmianę
+    }
   }
 
   ngOnInit(){

@@ -19,7 +19,7 @@ export const appConfig: ApplicationConfig = {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
         },
-        defaultLanguage: 'en',
+        fallbackLang: 'en'
       })
     ),
     TranslateService
