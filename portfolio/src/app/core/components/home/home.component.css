@@ -1,6 +1,4 @@
-section{
-  height: 105vh;
-}
+
 
 
 /* Landing page */
@@ -8,7 +6,7 @@ section{
 .landing-page {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100svh;
   overflow: hidden;
   background-color: #010012;
 }
@@ -19,6 +17,7 @@ section{
   left: 0;
   width: 100%;
   height: 100%;
+    object-fit: cover;
   transition: all 5s;
 }
 .landing-content{
@@ -196,10 +195,23 @@ section{
   .about-btn{
     background-color:#0395f741;
   }
+  .landing-page img{
+    object-fit: cover;
+    object-position:unset;
+  }
 }
 @media (width > 1500px){
   .landing-content h1{
     width: 60%;
   }
-
+}
+@media (width > 2000px){
+  .landing-page img{
+    object-fit:fill;
+  }
+}
+@supports not (height: 100svh) {
+  .landing-page {
+    min-height: 100vh;
+  }
 }

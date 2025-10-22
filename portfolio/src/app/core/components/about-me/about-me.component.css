@@ -202,8 +202,11 @@ article a:hover{
         padding: 20px 0;
     }
     .title-area h1{
-        font-size: 25px;
-        width: 90%;
+        width: 95%;
+        font-size: 32px;
+    }
+    .article-area{
+        gap: 20px;
     }
 }
 @media (width > 1500px){

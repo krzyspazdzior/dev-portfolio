@@ -430,8 +430,8 @@ h5{
     display: none;
   }
   svg{
-    transform: rotate(270deg);
-    height: 220px;
+    transform: rotate(270deg) scale(0.6);
+    height: 80px;
   }
   .clicker-area{
       padding: 50px 0;
@@ -457,10 +457,11 @@ h5{
 }
 @media (width > 1500px){
   .whole-monitor{
-    transform: scale(1.15);
+    transform: scale(1.25);
   }
+
   .pushable{
-    transform: scale(1.4);
+    transform: scale(1.6);
   }
   .side-circle{
     left: 92%;

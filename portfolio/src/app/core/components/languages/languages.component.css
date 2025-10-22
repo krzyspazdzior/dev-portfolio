@@ -187,7 +187,9 @@ font-size: 40px;
     section .img-wrapper img{
       display: none;
     }
-    
+    .content-section{
+      gap: 40px;
+    }
     .hex{
       width: 80px;
     height: 85px; 
