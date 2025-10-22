@@ -1,10 +1,10 @@
+import { NgClass } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { TranslateService } from '@ngx-translate/core';
-
 @Component({
   selector: 'app-header',
-  imports: [TranslatePipe],
+  imports: [TranslatePipe, NgClass],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
@@ -56,6 +56,23 @@ export class HeaderComponent implements OnInit{
   
     });
   }
+    burgerOn: boolean = false;
 
+  burgerToggle() {
+    const burger = document.querySelector(".hamburger");
+    const menu = document.querySelector(".mobile-menu");
+    if (!burger) return;
+    if (!menu) return;
+
+    if (this.burgerOn) {
+      burger.classList.remove("change");
+      menu.classList.remove("menu-active");
+      this.burgerOn = false;
+    } else {
+      burger.classList.add("change");
+      menu.classList.add("menu-active");
+      this.burgerOn = true;
+    }
+}
 
 }

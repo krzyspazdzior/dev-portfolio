@@ -5,12 +5,24 @@ header, ul{
       font-family: 'Switzer', sans-serif;
 
 }
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: none;
+  background: none;
+  outline: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
 header{
   width: 100%;
   top: 0;
   left: 0;
   letter-spacing: 0.15em;
-  margin: 20px;
+  margin: 0 0;
   transition: all 0.5s,
   opacity 2s,
   background-color .8s;
@@ -18,7 +30,7 @@ header{
   justify-content: space-between;
   position: relative;
   height: 90px;
-  padding: 0px 15px;
+  padding: 20px;
   left: unset;
   right: 0;
   transform: none;
@@ -150,23 +162,46 @@ button.nav-login-scroll:hover{
   }
   .change .bar1 {
     transform: translate(0, 11px) rotate(-45deg);
+    background-color: #fff;
   }
   
   .change .bar2 {opacity: 0;}
   
   .change .bar3 {
-    transform: translate(0, -11px) rotate(45deg);
+    transform: translate(0, -6px) rotate(45deg);
+    background-color: #fff;
   }
 
-.mobile-menu{
-  z-index: 10;
+/* Poprawka mobile menu */
+.burger-active{
+  background-color: #010012;
+
+}
+.mobile-menu {
+  background-color: #010012;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 100;
   text-align: center;
   display: none;
   flex-direction: column;
   gap: 1.5em;
   justify-content: center;
   align-items: center;
-  padding: 1.5em 10em;
+}
+.mobile-menu a{
+  border-radius: 0px;
+  color: var(--font-secondary);
+  text-decoration: none;
+  padding: 20px;
+  
+}
+
+header .mobile-menu.menu-active {
+  display: flex;
 }
 .mobile-button{
   color: white;
@@ -205,8 +240,8 @@ button.nav-login-scroll:hover{
 }
 }
 #translate-dropdown{
-  
-  margin-left: auto;
+  width: 50px;
+  text-align: end;
   font-size: 22px;
   background-color: transparent;
   color: #d2d2d29d;
@@ -216,4 +251,15 @@ button.nav-login-scroll:hover{
 }
 #translate-dropdown:focus{
   outline: none;
+}
+.dropdown-wrapper{
+  position: relative;
+  margin-left: auto;
+  display: flex;
+}
+.dropdown-wrapper i{
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(-50%, -50%);
 }

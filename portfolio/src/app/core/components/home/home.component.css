@@ -34,8 +34,11 @@
   gap: 20px;
 }
 .landing-content h1{
-  line-height: 80px;
-  filter: drop-shadow(2px 2px 2px #fff);
+    -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  line-height: 1.1;
+  filter: drop-shadow(2px 2px 2px #ffffff);
   letter-spacing: 8px;
   font-family: 'Panching';
   font-style: italic;
