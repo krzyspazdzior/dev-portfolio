@@ -5,11 +5,45 @@
   <title>Web Dev / Pazdzior</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
   <link rel="icon" type="image/x-icon" href="favicon.png">
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link href="https://api.fontshare.com/v2/css?f[]=switzer@1&display=swap" rel="stylesheet"> 
+  
+  <style>
+    #loader {
+    position: fixed;
+    inset: 0;
+    background: #010012;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+    transition: opacity 0.5s ease;
+  }
+  #loader.hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .spinner {
+    width: 70px;
+    height: 70px;
+    border: 6px solid rgba(255, 255, 255, 0.2);
+    border-top-color: #0395f7;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  }
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+  </style>
 </head>
 <body>
+
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
   <app-root></app-root>
 </body>
 </html>

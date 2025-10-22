@@ -205,6 +205,7 @@ button.nav-login-scroll:hover{
 }
 }
 #translate-dropdown{
+  
   margin-left: auto;
   font-size: 22px;
   background-color: transparent;
@@ -212,4 +213,7 @@ button.nav-login-scroll:hover{
   border: 0;
   margin-right: 15px;
   
+}
+#translate-dropdown:focus{
+  outline: none;
 }

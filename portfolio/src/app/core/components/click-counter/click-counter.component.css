@@ -422,6 +422,7 @@ h5{
 
 
 @media (width <= 900px){
+  
   .clicker-area{
     flex-direction: column-reverse;
     
@@ -441,7 +442,8 @@ h5{
   }
   section{
     gap: 10px;    
-    padding: 30px 0;
+    padding: 80px 0 0px 0px;
+    
   }
   .whole-monitor{
     transform: scale(0.7);
@@ -454,6 +456,13 @@ h5{
   .title-area h5{
     font-size: 15px;
   }
+  .monitor .screen{
+    filter: none;
+  }
+  .monitor-glow{
+    animation: none;
+  }
+
 }
 @media (width > 1500px){
   .whole-monitor{
@@ -467,5 +476,9 @@ h5{
     left: 92%;
     width: 450px;
     height: 450px;
+  }
+  section{
+    gap: 150px;
+    padding-bottom: 175px;
   }
 }

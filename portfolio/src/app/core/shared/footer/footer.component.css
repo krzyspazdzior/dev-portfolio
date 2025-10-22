@@ -60,8 +60,7 @@ ul a:hover{
 
 ul h2{
     font-size: 18px;
-    color: #ffffff97;
-    filter: drop-shadow(0px 2px 10px #fff);
+    color: #ffffff54;
     font-weight: 900;
 }
 h2{
@@ -69,9 +68,6 @@ h2{
     justify-content: center;
     width: 125px;
     font-weight: 500;
-}
-#nav-ul h2{
-    justify-content: start;
 }
 #nav-ul{
     align-items: end;
@@ -129,6 +125,7 @@ footer .footer-bottom>a{
 }
 
 @media (width <= 900px){
+
     .content-wrapper{
         flex-direction: column;
         height: auto;
