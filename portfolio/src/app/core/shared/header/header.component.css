@@ -240,13 +240,12 @@ header .mobile-menu.menu-active {
 }
 }
 #translate-dropdown{
-  width: 50px;
   text-align: end;
   font-size: 22px;
   background-color: transparent;
   color: #d2d2d29d;
   border: 0;
-  margin-right: 15px;
+  margin-right: 20px;
   
 }
 #translate-dropdown:focus{
@@ -257,9 +256,4 @@ header .mobile-menu.menu-active {
   margin-left: auto;
   display: flex;
 }
-.dropdown-wrapper i{
-  position: absolute;
-  top: 50%;
-  left: 10px;
-  transform: translate(-50%, -50%);
-}
+
