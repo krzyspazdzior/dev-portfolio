@@ -25,7 +25,17 @@ svg{
     width: 350px;
     color: #ffffff6a;
 }
-
+.monitor .screen #terminal{
+  position: absolute;
+  top: 0;
+  left: 0;
+    width: 90%;
+  height: 90%;
+  z-index: 3;
+  color: #ffffff98;
+  text-align: start;
+  font-size: 10px;
+}
 .monitor {
   z-index: 5;
   transform: scale(1.02);
@@ -35,7 +45,7 @@ svg{
   border-radius: 20px;
   position: relative;
 }
-.monitor .screen p{
+.monitor .screen .screen-info{
   position: absolute;
   top: 50%;
   left: 50%;
@@ -59,7 +69,7 @@ svg{
   border-radius: 8px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   color: #ffffff80;
   font-family:  monospace;
   font-weight: bold;
@@ -285,6 +295,7 @@ svg{
     border-radius: 8px;
     z-index: 100;
     position: relative;
+    object-fit: cover;
 }
 .loading-bar-container {
     display: flex;

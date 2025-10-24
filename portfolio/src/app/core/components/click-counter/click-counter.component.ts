@@ -14,6 +14,24 @@ export class ClickCounterComponent{
 
 loading = false;
 loadingProgress = 0;
+terminalLines = [
+  "> Initializing portfolio assets...",
+  "> Loading projects...",
+  "> Compiling creativity...",
+  "> Injecting caffeine into main thread...",
+  "> Connecting neural interface...",
+  "> Rendering pixel-perfect designs...",
+  "> Deploying innovation protocol...",
+  "> Syncing AI-driven components...",
+  "> Optimizing user engagement rate...",
+  "> Boot sequence complete. Welcome, operator.",
+  "> Establishing visual uplink...",
+  "> Activating motion subsystems...",
+  "> Calibrating code aesthetics...",
+  "> Importing neural style presets...",
+  "> Engaging responsive framework...",
+  "> System ready for interaction."
+]
 
 startLoading() {
     if (this.loading) return;
@@ -48,27 +66,21 @@ onButtonClick() {
   const info = document.querySelector(".screen-info");
 
   if(info){
-    let dots = "";
-    let infoEnd = false;
-    setTimeout(() => infoEnd = true, 6900);
     setTimeout(() => {
-    const loadingText = setInterval(() => {
-        
-        if(dots.length == 3){
-          dots = ""
-        }else{
-          dots += ".";
-        }
-        if(infoEnd == false){
-          info.innerHTML = "LOADING" + dots;
-        }else{
-          clearInterval(loadingText);
-          info.innerHTML = "READY!";
-          info.classList.add("info-ready")
-          setTimeout(() => info.innerHTML = "", 1500);
-        }
-      }, 600)
-    }, 1175)
+      info.innerHTML = "";
+    }, 1700)
+  }
+ 
+const terminal = document.getElementById("terminal");
+if(terminal){
+  setTimeout(() => {
+    for(let i=0; i<this.terminalLines.length;i++){
+      setTimeout(() => {terminal.innerHTML += this.terminalLines[i] + "<br>";}, 350 * i) 
+      
+    }
+      
+    }, 1700)
+    setTimeout(() => terminal.innerHTML = "", 8100);
   }
 
   const monitor = document.querySelector(".monitor");
