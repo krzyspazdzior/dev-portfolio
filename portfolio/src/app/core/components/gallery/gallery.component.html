@@ -15,6 +15,7 @@
                     <div class="tab"
                     [class.active]="activeIndex === $index"
                     (click)="setActive($index)"
+                    [class.closed]="closedTabs[$index]"
                     >
                     
                         <img [src]="icons[$index]" alt="">
@@ -22,11 +23,12 @@
                     <p>
                         {{ title }}
                     </p>
-                    <h5 [class.active-h5]="activeIndex === $index">
+                    <h5 (click)="close($index); $event.stopPropagation()" [class.active-h5]="activeIndex === $index">
                         <i class="bi bi-x"></i>
                     </h5>
                 </div>
                 }
+                 <i class="bi bi-plus" id="plus" (click)="addTab('home')"></i>
             </div>
         </div>
         <div class="toolbar">
@@ -39,10 +41,10 @@
                 <div class="searchbar-left">
                     <i class="bi bi-shield"></i>
                     <i class="bi bi-sliders"></i>
-                    @for(link of links; track $index) {
-                        <p [class.active-link]="activeIndex === $index">https://{{link}}</p>
-                    }
                 </div>
+                    @for(link of links; track $index) {
+                        <input placeholder="Search browser or enter URL" (keydown.enter)="search()" [(ngModel)]="input" type="text" [class.active-link]="activeIndex === $index" value='https://{{link}}'/>
+                    }
                 <i class="bi bi-translate"></i>
             </div>
             <div class="extensions">
@@ -56,11 +58,29 @@
         <div class="browser-result">
             
             @for(img of imgs; track $index) {
-                <img [src]="img" alt="app showcase" [class.active-img]="activeIndex === $index" class="pc-img">
+                @if(img != "home"){
+                    <img [src]="img" alt="app showcase" [class.active-img]="activeIndex === $index" class="pc-img">
+                }@else {
+
+                    <div class="homepage" [class.homepage-active]="activeIndex === $index">
+                        <h4><span>Inter</span>active<br>Br<span>∅</span>wser</h4>
+                        <div class="home-btn-area">
+                            @for(icon of icons; track $index){
+                                @if($index<5){
+                                    <div class="home-button" (click)="addTab(titles[$index].toLowerCase().replace(' ', ''))">
+                                        <img [src]='icon' alt="icon"> 
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                }
             }
             @for(img of imgsPhone; track $index) {
-                <img [src]="img" alt="app showcase" [class.active-phone]="activeIndex === $index" class="mobile-img">
-            }
+                 @if(img != "home"){
+                    <img [src]="img" alt="app showcase" [class.active-phone]="activeIndex === $index" class="mobile-img">
+                 }
+                }
             <p [class.active-p]="activeIndex == 0"><a>VISIT WEBSITE</a> <i class="bi bi-box-arrow-up-right"></i></p>
         </div>
     </div>

@@ -59,6 +59,7 @@ p{
 }
 
 .browser{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: column;
     width: 70%;
@@ -92,15 +93,19 @@ p{
 .tabs-area{
     padding: 5px 5px 5px 20px;
     display: flex;
+    /* align-items: center; */
     height: 50px;
     gap: 50px;
 }
 .tabs-wrapper{
     display: flex;
     overflow-x: auto;
+    scrollbar-width: none;     /* Firefox */
+
     gap: 6px;
 }
 .tab{
+    user-select: none;
     display: flex;
     justify-content: start;
     align-items: center;
@@ -109,10 +114,25 @@ p{
     min-width: 100px;
     flex-shrink: 1;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 12px;
     gap: 6px;
+    opacity: 1;
+    transform: scale(1);
     background-color: #0e0d21;
     cursor: pointer;
+     transition: 
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    margin 0.25s ease,
+    width 0.25s ease,
+    padding 0.25s ease;
+
+}
+.tab.entering{
+opacity: 0;
+  transform: scale(0.8);
+  width: 0;
+  margin-right: 0;
 }
 .tab.active.active.active{
     background-color: #1b193c;
@@ -151,7 +171,7 @@ p{
     align-items: center;
     color: var(--font-secondary);
 }
-.arrow-area i, .extensions i, .searchbar i{
+.arrow-area i, .extensions i, .searchbar i, i#plus{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,7 +179,7 @@ p{
     width: 30px;
     border-radius: 5px;
 }
-.arrow-area i:hover, .extensions i:hover, .searchbar i:hover{
+.arrow-area i:hover, .extensions i:hover, .searchbar i:hover, i#plus:hover{
     background-color: #ffffff18;
 }
 .searchbar{
@@ -167,13 +187,26 @@ p{
     justify-content: space-between;
     align-items: center;
     width: 65%;
+    font-size: 12px;
     border-radius: 5px;
     background-color: #151531;
 }
-.searchbar p{
+.searchbar input{
+    background-color: inherit;
+    color: var(--font-secondary);
+    border: 0;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
     display: none;
     justify-content: center;
     align-items: center;
+}
+.searchbar input:focus{
+    outline: none;
+}
+.searchbar:has(input:focus){
+    background-color: rgb(36, 34, 67);
 }
 .active-link.active-link.active-link{
     display: flex;
@@ -183,7 +216,17 @@ p{
     justify-content: center;
     align-items: center;
 }
-
+.closed{
+    opacity: 0;
+  transform: scale(0.7);
+  width: 0;
+  margin-right: -105px; /* lekko ściąga sąsiednie elementy */
+  padding: 0;
+  overflow: hidden; /* ukrywa zawartość w czasie zwijania */
+}
+.closed-display{
+    display: none;
+}
 
 #menu{
     animation: blink 2s infinite; 
@@ -331,6 +374,75 @@ li:hover{
     cursor: pointer;
 }
 
+i#plus{
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--font-secondary);
+    height: 100%;
+    width: auto;
+    aspect-ratio: 1/1;
+    transition: all 0.5s;
+}
+
+.homepage {
+  width: 100%;
+  background-color: #0e0d21;
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  text-align: center;
+  aspect-ratio: 2880 / 1598;
+  border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+.homepage>h4{
+    font-size: 45px;
+    letter-spacing: 3px;
+    font-weight: 900;
+}
+.homepage>h4>span{
+    color: var(--blue);
+    text-shadow: 0 0 20px var(--blue);
+}
+.homepage-active.homepage-active{
+    display: flex;
+}
+.home-btn-area{
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+}
+.home-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(67, 93, 240, 0.081);
+    padding: 30px;
+    border-radius: 10px;
+}
+.home-button:hover{
+    background-color: rgba(19, 30, 115, 0.581);
+    transform: translateY(-3px);
+    transition: all 0.3s ease;
+    box-shadow: 0px 2px 15px 0.1px #4e4cc83f;
+    cursor: pointer;
+}
+.homepage .home-button>img{
+    display: block;
+    width: 55px;
+}
+
+@media (max-width: 900px) {
+  /* mobile */
+  .homepage-div {
+    aspect-ratio: 1170 / 2082; /* 0.561 */
+  }
+}
+
 
 /* semantyczność zdjęć */
 /* domyślnie wszystkie obrazki ukryte */
@@ -367,6 +479,9 @@ li:hover{
     .tab{
         font-size: 10px;
         height: 30px;
+    }
+    .tab p{
+        letter-spacing: 1.4;
     }
     .tabs-area{
         height: fit-content;
