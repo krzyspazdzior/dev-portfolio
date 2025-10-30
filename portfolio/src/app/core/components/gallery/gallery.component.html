@@ -12,21 +12,22 @@
             </div>
             <div class="tabs-wrapper">
                 @for (title of titles; track $index) {
-                    <div class="tab"
-                    [class.active]="activeIndex === $index"
-                    (click)="setActive($index)"
-                    [class.closed]="closedTabs[$index]"
-                    >
+                        <div class="tab"
+                        [class.active]="activeIndex === $index"
+                        (click)="setActive($index)"
+                        [class.closed]="closedTabs[$index]"
+                        >
+                        
+                            <img [src]="icons[$index]" alt="">
+    
+                        <p>
+                            {{ title }}
+                        </p>
+                        <h5 (click)="close($index); $event.stopPropagation()" [class.active-h5]="activeIndex === $index">
+                            <i class="bi bi-x"></i>
+                        </h5>
+                    </div>
                     
-                        <img [src]="icons[$index]" alt="">
-
-                    <p>
-                        {{ title }}
-                    </p>
-                    <h5 (click)="close($index); $event.stopPropagation()" [class.active-h5]="activeIndex === $index">
-                        <i class="bi bi-x"></i>
-                    </h5>
-                </div>
                 }
                  <i class="bi bi-plus" id="plus" (click)="addTab('home')"></i>
             </div>
@@ -43,7 +44,7 @@
                     <i class="bi bi-sliders"></i>
                 </div>
                     @for(link of links; track $index) {
-                        <input placeholder="Search browser or enter URL" (keydown.enter)="search()" [(ngModel)]="input" type="text" [class.active-link]="activeIndex === $index" value='https://{{link}}'/>
+                        <input placeholder="Search browser or enter URL" (keydown.enter)="updatePreset(input)" [(ngModel)]="input" type="text" [class.active-link]="activeIndex === $index" value='{{link}}'/>
                     }
                 <i class="bi bi-translate"></i>
             </div>
@@ -67,7 +68,7 @@
                         <div class="home-btn-area">
                             @for(icon of icons; track $index){
                                 @if($index<5){
-                                    <div class="home-button" (click)="addTab(titles[$index].toLowerCase().replace(' ', ''))">
+                                    <div class="home-button" (click)="updatePreset(titles[$index].toLowerCase().replace(' ', ''))">
                                         <img [src]='icon' alt="icon"> 
                                     </div>
                                 }

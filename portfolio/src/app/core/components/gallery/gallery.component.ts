@@ -15,7 +15,7 @@ export class GalleryComponent {
     icons = ['images/dribble_icon.png', 'images/carematch_icon.png','images/rythmify_icon.png', 'images/fervo_icon.png', 'images/rescript_icon.png'];
     imgs = ['images/dribble_pc.png', 'images/carematch_pc.png', 'images/rythmify_pc.png', 'images/fervo_pc.png', 'images/rescript_pc.png'];
     imgsPhone = ['images/dribble_mobile.png', 'images/carematch_mobile.png', 'images/rythmify_mobile.png', 'images/fervo_mobile.png', 'images/rescript_mobile.png'];
-    links: string[] = ['dribble-music.com', 'carematch.com', 'rhytmify.com', 'fervo.com', 'rescript.dev'];
+    links: string[] = ['https://dribble-music.com', 'https://carematch.com', 'https://rhytmify.com', 'https://fervo-casino.com', 'https://rescript.dev'];
     hrefs = [];
     activeIndex: number = 0
     activeTabs: number = 4;
@@ -25,6 +25,7 @@ export class GalleryComponent {
 
     tabPresets: any = {
       home: {
+        titleValue: 'home',
         title: 'Home',
         icon: 'images/home_icon.webp',
         img: 'home',
@@ -32,39 +33,44 @@ export class GalleryComponent {
         link: ''
       },
       dribblemusic: {
+        titleValue: 'dribble music',
         title: 'Dribble Music',
         icon: 'images/dribble_icon.png',
         img: 'images/dribble_pc.png',
         imgPhone: 'images/dribble_mobile.png',
-        link: 'dribble-music.com'
+        link: 'https://dribble-music.com'
       },
       carematch: {
+        titleValue: 'carematch',
         title: 'CareMatch',
         icon: 'images/carematch_icon.png',
         img: 'images/carematch_pc.png',
         imgPhone: 'images/carematch_mobile.png',
-        link: 'carematch.com'
+        link: 'https://carematch.com'
       },
       rhytmify: {
+        titleValue: 'rhytmify',
         title: 'Rhytmify',
         icon: 'images/rythmify_icon.png',
         img: 'images/rythmify_pc.png',
         imgPhone: 'images/rythmify_mobile.png',
-        link: 'rhytmify.com'
+        link: 'https://rhytmify.com'
       },
       fervocasino: {
+        titleValue: 'fervo',
         title: 'Fervo Casino',
         icon: 'images/fervo_icon.png',
         img: 'images/fervo_pc.png',
         imgPhone: 'images/fervo_mobile.png',
-        link: 'fervo.com'
+        link: 'https://fervo-casino.com'
       },
       rescript: {
+        titleValue: 'rescript',
         title: 'Rescript',
         icon: 'images/rescript_icon.png',
         img: 'images/rescript_pc.png',
         imgPhone: 'images/rescript_mobile.png',
-        link: 'rescript.dev'
+        link: 'https://rescript.dev'
       }
     };
 
@@ -73,24 +79,49 @@ export class GalleryComponent {
       this.activeIndex = i;
       this.input = this.links[i];
     }
+close(i: number) {
+  this.closedTabs[i] = true;
+  this.activeTabs--
 
-    close(i: number){
-      this.activeTabs--
-      const tab = document.querySelectorAll('.tab')[i];
+  if (this.activeIndex === i) {
+    // spróbuj znaleźć tab po prawej
+    let newActive = this.closedTabs.findIndex((closed, idx) => !closed && idx > i);
 
-      this.closedTabs[i] = true;
-      this.activeIndex = this.activeIndex -1;
-      setTimeout(() => {
-        tab.classList.add("closed-display");
-      }, 300)
+    if(!this.closedTabs.includes(false)){
+      this.addTab('home');
+      this.activeIndex = 7;
     }
+    // jeśli brak po prawej → spróbuj po lewej
+    if (newActive === -1) {
+      for (let idx = i - 1; idx >= 0; idx--) {
+        if (!this.closedTabs[idx]) {
+          newActive = idx;
+          break;
+        }
+      }
+            console.log(this.titles.length - 1)
+
+    }
+
+    // jeśli wciąż brak → wszystkie zamknięte → ustaw -1
+    if (newActive === -1) {
+      this.activeIndex = -1;
+      this.input = '';
+    } else {
+      this.activeIndex = newActive;
+      this.input = this.links[newActive];
+    }
+  }
+}
 
     addTab(type: string){
 
       const preset = this.tabPresets[type];
       if (!preset) return;
 
-      const newIndex = this.activeTabs + 1;
+      this.activeTabs++
+      const newIndex = this.activeTabs;
+      this.activeIndex = newIndex;
 
       this.titles.push(preset.title);
       this.icons.push(preset.icon);
@@ -101,18 +132,25 @@ export class GalleryComponent {
 
       this.closedTabs.push(false);
 
-      this.activeIndex = newIndex;
       this.input = this.links[newIndex];
-    }
-  
 
-    search(){
-      this.links.forEach((link, index) => {
-        if(link === this.input){
-          this.activeIndex = index;
-        }
-      });
     }
+    updatePreset(type: string){
+      const trimmedType = type.split('.')[0].replace("-", "");   
+      
+      const preset = this.tabPresets[trimmedType];
+
+      if (!preset) return;
+
+
+      this.titles[this.activeIndex] = preset.title;
+      this.icons[this.activeIndex] = preset.icon;
+      this.imgs[this.activeIndex] = preset.img;
+      this.imgsPhone[this.activeIndex] = preset.imgPhone;
+      this.links[this.activeIndex] = preset.link;
+
+    }
+
 
     refresh(){
       console.log(this.titles[0].toLowerCase().replace(' ', ''))
