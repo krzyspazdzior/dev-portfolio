@@ -337,3 +337,8 @@ transition: transform 0.2s ease;
         height: auto;
     }
 }
+@media (width > 450px) and (width <= 900px){
+    .business-card{
+        width: 400px;
+    }
+}

@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
 
@@ -11,173 +10,217 @@ import { TranslatePipe } from '@ngx-translate/core';
   styleUrl: './gallery.component.css'
 })
 export class GalleryComponent {
-    titles = ['Dribble Music', 'CareMatch', 'Rhytmify', 'Fervo Casino', 'Rescript']; 
-    icons = ['images/dribble_icon.png', 'images/carematch_icon.png','images/rythmify_icon.png', 'images/fervo_icon.png', 'images/rescript_icon.png'];
-    imgs = ['images/dribble_pc.png', 'images/carematch_pc.png', 'images/rythmify_pc.png', 'images/fervo_pc.png', 'images/rescript_pc.png'];
-    imgsPhone = ['images/dribble_mobile.png', 'images/carematch_mobile.png', 'images/rythmify_mobile.png', 'images/fervo_mobile.png', 'images/rescript_mobile.png'];
-    links: string[] = ['https://dribble-music.com', 'https://carematch.com', 'https://rhytmify.com', 'https://fervo-casino.com', 'https://rescript.dev'];
-    hrefs = [];
-    activeIndex: number = 0
-    activeTabs: number = 4;
-    closedTabs: boolean[] = new Array(this.titles.length).fill(false);
-    input = this.links[0];
+ 
+  
+  tabs = [
+  { 
+    id: 0, 
+    title: 'Home', 
+    icon: 'images/home_icon.webp', 
+    img: 'home', 
+    imgPhone: 'home', 
+    link: '', 
+    closed: false 
+  }
+];
 
-
-    tabPresets: any = {
-      home: {
-        titleValue: 'home',
-        title: 'Home',
-        icon: 'images/home_icon.webp',
-        img: 'home',
-        imgPhone: 'home',
-        link: ''
-      },
-      dribblemusic: {
-        titleValue: 'dribble music',
-        title: 'Dribble Music',
-        icon: 'images/dribble_icon.png',
-        img: 'images/dribble_pc.png',
-        imgPhone: 'images/dribble_mobile.png',
-        link: 'https://dribble-music.com'
-      },
-      carematch: {
-        titleValue: 'carematch',
-        title: 'CareMatch',
-        icon: 'images/carematch_icon.png',
-        img: 'images/carematch_pc.png',
-        imgPhone: 'images/carematch_mobile.png',
-        link: 'https://carematch.com'
-      },
-      rhytmify: {
-        titleValue: 'rhytmify',
-        title: 'Rhytmify',
-        icon: 'images/rythmify_icon.png',
-        img: 'images/rythmify_pc.png',
-        imgPhone: 'images/rythmify_mobile.png',
-        link: 'https://rhytmify.com'
-      },
-      fervocasino: {
-        titleValue: 'fervo',
-        title: 'Fervo Casino',
-        icon: 'images/fervo_icon.png',
-        img: 'images/fervo_pc.png',
-        imgPhone: 'images/fervo_mobile.png',
-        link: 'https://fervo-casino.com'
-      },
-      rescript: {
-        titleValue: 'rescript',
-        title: 'Rescript',
-        icon: 'images/rescript_icon.png',
-        img: 'images/rescript_pc.png',
-        imgPhone: 'images/rescript_mobile.png',
-        link: 'https://rescript.dev'
-      }
-    };
-
-
-    setActive(i:number){
-      this.activeIndex = i;
-      this.input = this.links[i];
+  
+  activeIndex: number = 0;
+  input = '';
+  
+  tabPresets: any = {
+    home: {
+      id: -1,
+      titleValue: 'home',
+      title: 'Home',
+      icon: 'images/home_icon.webp',
+      img: 'home',
+      imgPhone: 'home',
+      link: ''
+    },
+    empty: {
+      id: -1,
+      titleValue: 'empty',
+      title: 'Not Found',
+      icon: 'images/blank.webp',
+      img: 'empty',
+      imgPhone: 'empty',
+      link: ''
+    }, 
+    dribblemusic: {
+      id: -1,
+      titleValue: 'dribble music',
+      title: 'Dribble Music',
+      icon: 'images/dribble_icon.png',
+      img: 'images/dribble_pc.png',
+      imgPhone: 'images/dribble_mobile.png',
+      link: 'https://dribble-music.com'
+    },
+    carematch: {
+      id: -1,
+      titleValue: 'carematch',
+      title: 'CareMatch',
+      icon: 'images/carematch_icon.png',
+      img: 'images/carematch_pc.png',
+      imgPhone: 'images/carematch_mobile.png',
+      link: 'https://carematch.com'
+    },
+    rhytmify: {
+      id: -1,
+      titleValue: 'rhytmify',
+      title: 'Rhytmify',
+      icon: 'images/rythmify_icon.png',
+      img: 'images/rythmify_pc.png',
+      imgPhone: 'images/rythmify_mobile.png',
+      link: 'https://rhytmify.com'
+    },
+    fervocasino: {
+      id: -1,
+      titleValue: 'fervo',
+      title: 'Fervo Casino',
+      icon: 'images/fervo_icon.png',
+      img: 'images/fervo_pc.png',
+      imgPhone: 'images/fervo_mobile.png',
+      link: 'https://fervo-casino.com'
+    },
+    rescript: {
+      id: -1,
+      titleValue: 'rescript',
+      title: 'Rescript',
+      icon: 'images/rescript_icon.png',
+      img: 'images/rescript_pc.png',
+      imgPhone: 'images/rescript_mobile.png',
+      link: 'https://rescript.dev'
     }
-close(i: number) {
-  this.closedTabs[i] = true;
-  this.activeTabs--
+  };
+  
+ homeButtonPresets = [
+  { ...this.tabPresets.dribblemusic, id: 1 },
+  { ...this.tabPresets.carematch, id: 2 },
+  { ...this.tabPresets.rhytmify, id: 3 },
+  { ...this.tabPresets.fervocasino, id: 4 },
+  { ...this.tabPresets.rescript, id: 5 }
+];
+  
+  setActive(tab: any) {
+    const i = this.tabs.indexOf(tab);
+  if (i >= 0 && !tab.closed) {
+    this.activeIndex = i;
+    this.input = tab.link;
+  }
+  }
 
-  if (this.activeIndex === i) {
-    // spróbuj znaleźć tab po prawej
-    let newActive = this.closedTabs.findIndex((closed, idx) => !closed && idx > i);
+  close(tab: any) {
+    const i = this.tabs.indexOf(tab)
+    if (i < 0 || i >= this.tabs.length || this.tabs[i].closed) return;
 
-    if(!this.closedTabs.includes(false)){
-      this.addTab('home');
-      this.activeIndex = 7;
-    }
-    // jeśli brak po prawej → spróbuj po lewej
-    if (newActive === -1) {
-      for (let idx = i - 1; idx >= 0; idx--) {
-        if (!this.closedTabs[idx]) {
-          newActive = idx;
-          break;
+    this.tabs[i].closed = true;
+
+    if (this.activeIndex === i) {
+      let newActive = this.tabs.findIndex((tab, idx) => !tab.closed && idx > i);
+
+      if (newActive === -1) {
+        for (let idx = i - 1; idx >= 0; idx--) {
+          if (!this.tabs[idx].closed) {
+            newActive = idx;
+            break;
+          }
         }
       }
-            console.log(this.titles.length - 1)
 
+      if (newActive === -1) {
+        this.addTab('home');
+        this.activeIndex = this.tabs.length - 1;
+        this.input = this.tabs[this.activeIndex].link;
+      } else {
+        this.activeIndex = newActive;
+        this.input = this.tabs[newActive].link;
+      }
+    }
+    setTimeout(() => {
+      const tabElement = document.querySelector(`.tab[data-id="${tab.id}"]`);
+      if (tabElement) {
+        tabElement.classList.add('closed-after');
+      }
+    }, 300);
+  }
+
+  addTab(type: string) {
+    const preset = this.tabPresets[type];
+    if (!preset) return;
+
+    const newId = this.tabs.length > 0 ? Math.max(...this.tabs.map(t => t.id)) + 1 : 0;
+
+    const newTab = {
+      id: newId,
+      title: preset.title,
+      icon: preset.icon,
+      img: preset.img,
+      imgPhone: preset.imgPhone,
+      link: preset.link,
+      closed: false
+    };
+
+    this.tabs.push(newTab);
+    this.activeIndex = this.tabs.length - 1;
+    this.input = newTab.link;
+  }
+
+  updatePreset(type: string) {
+    if (this.activeIndex < 0 || this.activeIndex >= this.tabs.length) return;
+    let result = ""
+    const trimmedType = type.split('.')[0].replace("-", "")
+    if(trimmedType[0] == "h" && trimmedType[1] == "t"){
+      result = trimmedType.slice(8);
+    }else{
+      result = trimmedType;
+    }
+    const preset = this.tabPresets[result];
+
+    const tab = this.tabs[this.activeIndex];
+
+    if (!preset) {
+      tab.title = this.tabPresets.empty.title;
+      tab.icon = this.tabPresets.empty.icon;
+      tab.img = this.tabPresets.empty.img;
+      tab.imgPhone = this.tabPresets.empty.imgPhone;
+      tab.link = this.tabPresets.empty.link;
+      this.input = '';
+      return;
     }
 
-    // jeśli wciąż brak → wszystkie zamknięte → ustaw -1
-    if (newActive === -1) {
-      this.activeIndex = -1;
-      this.input = '';
-    } else {
-      this.activeIndex = newActive;
-      this.input = this.links[newActive];
+    tab.title = preset.title;
+    tab.icon = preset.icon;
+    tab.img = preset.img;
+    tab.imgPhone = preset.imgPhone;
+    tab.link = preset.link;
+
+    this.input = tab.link;
+  }
+
+  refresh() {
+    const img = document.querySelector(".active-img");
+    if (img) {
+      img.classList.add("img-refreshed");
+      setTimeout(() => {
+        img.classList.remove("img-refreshed");
+      }, 60);
+    }
+  }
+
+  menuClick() {
+    const menu = document.querySelector("#menu");
+    const dropdown = document.querySelector(".dropdown");
+
+    if (menu && dropdown) {
+      if (dropdown.classList.contains("dropdown-active")) {
+        dropdown.classList.remove("dropdown-active");
+        menu.classList.remove("menu-bg");
+      } else {
+        dropdown.classList.add("dropdown-active");
+        menu.classList.add("menu-bg");
+      }
+      menu.classList.add("active-menu");
     }
   }
 }
-
-    addTab(type: string){
-
-      const preset = this.tabPresets[type];
-      if (!preset) return;
-
-      this.activeTabs++
-      const newIndex = this.activeTabs;
-      this.activeIndex = newIndex;
-
-      this.titles.push(preset.title);
-      this.icons.push(preset.icon);
-      this.imgs.push(preset.img);
-      this.imgsPhone.push(preset.imgPhone);
-      this.links.push(preset.link);
-      this.closedTabs.push(false);
-
-      this.closedTabs.push(false);
-
-      this.input = this.links[newIndex];
-
-    }
-    updatePreset(type: string){
-      const trimmedType = type.split('.')[0].replace("-", "");   
-      
-      const preset = this.tabPresets[trimmedType];
-
-      if (!preset) return;
-
-
-      this.titles[this.activeIndex] = preset.title;
-      this.icons[this.activeIndex] = preset.icon;
-      this.imgs[this.activeIndex] = preset.img;
-      this.imgsPhone[this.activeIndex] = preset.imgPhone;
-      this.links[this.activeIndex] = preset.link;
-
-    }
-
-
-    refresh(){
-      console.log(this.titles[0].toLowerCase().replace(' ', ''))
-      const img = document.querySelector(".active-img");
-      if(img){
-        img.classList.add("img-refreshed");
-        setTimeout(() => {
-          img.classList.remove("img-refreshed");
-        }, 60)
-      }
-
-    }
-
-    menuClick() {
-      const menu = document.querySelector("#menu");
-      const dropdown = document.querySelector(".dropdown")
-      
-      if(menu && dropdown){
-            if(dropdown.classList.contains("dropdown-active")){
-              dropdown.classList.remove("dropdown-active");
-              menu.classList.remove("menu-bg");
-            }else{
-              dropdown.classList.add("dropdown-active");
-              menu.classList.add("menu-bg");
-
-            }
-            menu.classList.add("active-menu");
-        }
-    }
-  }
