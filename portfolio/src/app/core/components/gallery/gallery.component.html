@@ -12,7 +12,9 @@
             </div>
             <div class="tabs-wrapper">
                 @for (tab of tabs; track tab.id) {
-                        <div class="tab"
+                    
+                        <div  
+                        class="tab"
                         [class.active]="activeIndex === tabs.indexOf(tab)"
                         (click)="setActive(tab)"
                         [class.closed]="tab.closed"

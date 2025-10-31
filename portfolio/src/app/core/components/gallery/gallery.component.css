@@ -100,11 +100,13 @@ p{
 .tabs-wrapper{
     display: flex;
     overflow-x: auto;
-    scrollbar-width: none;     /* Firefox */
-
+    scrollbar-width: none;
+    position: relative;
     gap: 6px;
 }
 .tab{
+    top: 0 ;
+    left: 0;
      opacity: 1;
     transform: scale(1);
     margin-right: 0;
@@ -131,6 +133,9 @@ p{
     width 0.25s ease,
     padding 0.25s ease;
 
+}
+.cdk-drag-preview h5{
+    margin-left: auto;
 }
 .tab:not(.closed) {
   animation: tabOpen 0.25s ease-out;
@@ -591,9 +596,16 @@ height: 38%;
     .toolbar .extensions{
         font-size: 10px;
     }
-    .toolbar .extensions>i, .arrow-area>i{
-        width: 13px;
-        height: 13px;
+    .toolbar .extensions>i, .arrow-area>i, .searchbar .searchbar-left i, #menu{
+        display: none;
+    }
+    .searchbar{
+        width: 90%;
+
+    }
+    .searchbar input{
+        padding: 0px 10px;
+        width: 100%;
     }
     .browser{
         width: 85%;
