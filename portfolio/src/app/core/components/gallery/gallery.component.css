@@ -176,6 +176,8 @@ p{
 .browser-result{
     display: flex;
     position: relative;
+    aspect-ratio: 2880 / 1598;
+    background-color: #0e0d21;
 }
 .toolbar{
     display: flex;
