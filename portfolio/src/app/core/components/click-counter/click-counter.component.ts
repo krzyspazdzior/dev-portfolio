@@ -92,7 +92,8 @@ if(terminal){
   const screen = document.querySelector(".monitor .screen");
   if(img && screen){
           setTimeout(() => img.classList.add("img-glow"), 8100);
-          setTimeout(() => screen.classList.add("active-screen"), 8100);
+          setTimeout(() => screen.classList.add("active-screen"), 1700);
+          setTimeout(() => screen.classList.add("after-screen"), 8100);
 
   }
 

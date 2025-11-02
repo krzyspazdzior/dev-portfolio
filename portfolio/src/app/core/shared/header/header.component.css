@@ -1,7 +1,7 @@
 header, ul{
   display: flex;
   align-items: center;
-  font-size: 14.5px;
+  font-size: 14px;
       font-family: 'Switzer', sans-serif;
 
 }
@@ -21,7 +21,6 @@ header{
   width: 100%;
   top: 0;
   left: 0;
-  letter-spacing: 0.15em;
   margin: 0 0;
   transition: all 0.5s,
   opacity 2s,
@@ -29,11 +28,12 @@ header{
   font-weight: 300;
   justify-content: space-between;
   position: relative;
-  height: 90px;
+  height: 75px;
   padding: 20px;
   left: unset;
   right: 0;
   transform: none;
+  
 }
 header.nav-scroll-scroll{
   background-color: #010012;
@@ -45,6 +45,7 @@ header.nav-scroll-scroll{
   max-width: 100vw;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   font-weight: 500;
+  border-radius: 0;
   padding: 30px;
   
 }
@@ -73,7 +74,7 @@ nav{
 ul{
   height: 100%;
   justify-content: center;
-  gap: 1.2rem;
+  gap: 1.35rem;
   list-style: none;
   margin: 0;
 }
@@ -81,6 +82,8 @@ header li{
   padding: 15px;
 }
 header nav a{
+  transform: scale(1.25,1);
+  letter-spacing: 0.5px;
   color: inherit;
   display: block;
   border-radius: 15px;
@@ -230,15 +233,7 @@ header .mobile-menu.menu-active {
     justify-content: end;
   }
 }
-@media (width > 1500px){
-  header{
-    height: 110px;
-  }
-  header li{
-  padding: 18px 22px;
-  font-size: 19px;
-}
-}
+
 #translate-dropdown{
   text-align: end;
   font-size: 22px;
