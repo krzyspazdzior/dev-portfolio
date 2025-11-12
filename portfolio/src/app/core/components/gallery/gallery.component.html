@@ -18,6 +18,7 @@
                         [class.active]="activeIndex === tabs.indexOf(tab)"
                         (click)="setActive(tab)"
                         [class.closed]="tab.closed"
+                        [attr.data-id]="tab.id"
                         >
                         
                             <img [src]="tab.icon" alt="" [class.home-icon]="tab.title === 'Home'">
