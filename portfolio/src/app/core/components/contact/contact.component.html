@@ -23,9 +23,7 @@
                             pazdzior-web-dev.netlify.app
                         </span><br>
                         <span id="phone">+48 731 231 737</span>
-                    </div>
-                    
-                    <!-- <div class="line v-line"></div> -->
+                    </div>                    
                     <p>
                         Gliwice,<br>
                         Poland,<br>
@@ -36,14 +34,14 @@
         </div>    
         <div class="form-wrapper">
             <form [formGroup]="contactForm" (submit)="onSubmit($event)">
-                <label>{{"CONTACT.LABEL_1" | translate}}</label>
-                <input type="text" formControlName="name">
-                <label>{{"CONTACT.LABEL_2" | translate}}</label>
-                <input type="email" formControlName="email">
-                <label>{{"CONTACT.LABEL_3" | translate}}</label>
-                <input type="tel" formControlName="phone">
-                <label>{{"CONTACT.LABEL_4" | translate}}</label>
-                <textarea name="" id="" rows="4" formControlName="content"></textarea>
+                <label for="name">{{"CONTACT.LABEL_1" | translate}}</label>
+                <input type="text" formControlName="name" id="name">
+                <label for="email">{{"CONTACT.LABEL_2" | translate}}</label>
+                <input type="email" formControlName="email" id="email">
+                <label for="tel">{{"CONTACT.LABEL_3" | translate}}</label>
+                <input type="tel" formControlName="phone" id="tel">
+                <label for="content">{{"CONTACT.LABEL_4" | translate}}</label>
+                <textarea name="" id="" rows="4" formControlName="content" id="content"></textarea>
                 <p id="validator"></p>
                 <button class="submit-btn" [ngClass]="{'flying': rocketFlying}">
     {{"CONTACT.SUBMIT" | translate}} <i class="bi bi-rocket-fill rocket" [ngClass]="{'rocket-fly': rocketFlying}"></i>
@@ -52,5 +50,5 @@
         </div>
     </div>   
      
-    <img src="backgrounds/contact-bg-2.webp" alt="background night panorama full of stars">
+    <img ngSrc="backgrounds/contact-bg-2.webp" alt="background night panorama full of stars" height="1066" width="1440">
 </section>

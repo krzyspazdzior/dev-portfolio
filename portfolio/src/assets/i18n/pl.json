@@ -55,8 +55,10 @@
     "INCORRECT": "Wypełnij poprawnie wszystkie pola."
   },
   "FOOTER": {
-    "P": "Od pomysłu do w pełni funkcjonalnej, responsywnej strony internetowej.",
+    "P": "Gotowy do rozwinięcia twoich pomysłów. Na co czekasz?",
     "SUBTITLE_1": "KONTAKT",
-    "SUBTITLE_2": "NAWIGACJA"
+    "SUBTITLE_2": "NAWIGACJA",
+    "SUBTITLE_3": "SOCIAL MEDIA"
+
   }
 }

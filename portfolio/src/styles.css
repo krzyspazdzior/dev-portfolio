@@ -11,12 +11,14 @@
   src: url('assets/font2.otf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: 'Bounded';
   src: url('assets/Bounded-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -24,6 +26,7 @@
   src: url('assets/Bounded-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -31,12 +34,14 @@
   src: url('assets/Satoshi-Variable.ttf') format('truetype');
   font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
+
 
 @font-face {
   font-family: 'Panching';
   src: url('assets/panching2.otf') format('opentype');
-  
+  font-display: swap;
 }
 
 

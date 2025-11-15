@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslatePipe } from '@ngx-translate/core';
+import { NgOptimizedImage } from "@angular/common";
 @Component({
   standalone: true,
   selector: 'app-gallery',
-  imports: [TranslatePipe, FormsModule],
+  imports: [TranslatePipe, FormsModule, NgOptimizedImage],
   templateUrl: './gallery.component.html',
   styleUrl: './gallery.component.css'
 })
@@ -41,7 +42,7 @@ export class GalleryComponent {
       id: -1,
       titleValue: 'empty',
       title: 'Not Found',
-      icon: 'images/blank.webp',
+      icon: 'images/blank.png',
       img: 'empty',
       imgPhone: 'empty',
       link: ''
@@ -222,4 +223,5 @@ export class GalleryComponent {
       menu.classList.add("active-menu");
     }
   }
+
 }

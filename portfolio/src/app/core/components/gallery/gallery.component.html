@@ -3,98 +3,99 @@
         <h5><i class="bi bi-folder-fill"></i> {{"GALLERY.SUBTITLE" | translate}}</h5>
         <h1>{{"GALLERY.TITLE" | translate}}</h1>
     </div>
-    <div class="browser">
-        <div class="tabs-area">
-            <div class="system-btn-area">
-                <div class="system-btn red"></div>
-                <div class="system-btn yellow"></div>
-                <div class="system-btn green"></div>
-            </div>
-            <div class="tabs-wrapper">
-                @for (tab of tabs; track tab.id) {
-                    
-                        <div  
-                        class="tab"
-                        [class.active]="activeIndex === tabs.indexOf(tab)"
-                        (click)="setActive(tab)"
-                        [class.closed]="tab.closed"
-                        [attr.data-id]="tab.id"
-                        >
+
+        <div class="browser">
+            <div class="tabs-area">
+                <div class="system-btn-area">
+                    <div class="system-btn red"></div>
+                    <div class="system-btn yellow"></div>
+                    <div class="system-btn green"></div>
+                </div>
+                <div class="tabs-wrapper">
+                    @for (tab of tabs; track tab.id) {
                         
-                            <img [src]="tab.icon" alt="" [class.home-icon]="tab.title === 'Home'">
-    
-                        <p>
-                            {{ tab.title }}
-                        </p>
-                        <h5 (click)="close(tab); $event.stopPropagation()" [class.active-h5]="activeIndex === tabs.indexOf(tab)">
-                            <i class="bi bi-x"></i>
-                        </h5>
-                    </div>
-                    
-                }
-                 <i class="bi bi-plus" id="plus" (click)="addTab('home')"></i>
-            </div>
-        </div>
-        <div class="toolbar">
-            <div class="arrow-area">
-                <i class="bi bi-arrow-left"></i>
-                <i class="bi bi-arrow-right"></i>
-                <i class="bi bi-arrow-clockwise" (click)="refresh()"></i>
-            </div>
-            <div class="searchbar">
-                <div class="searchbar-left">
-                    <i class="bi bi-shield"></i>
-                    <i class="bi bi-sliders"></i>
-                </div>
-                    @for(tab of tabs; track tab.id) {
-                        <input placeholder="Search browser or enter URL" (keydown.enter)="updatePreset(input)" [(ngModel)]="input" type="text" [class.active-link]="activeIndex === tabs.indexOf(tab)" [value]="tab.link"/>
+                            <div  
+                            class="tab"
+                            [class.active]="activeIndex === tabs.indexOf(tab)"
+                            (click)="setActive(tab)"
+                            [class.closed]="tab.closed"
+                            [attr.data-id]="tab.id"
+                            >
+                            
+                                <img [ngSrc]="tab.icon" alt="" [class.home-icon]="tab.title === 'Home'" width="20" height="20">
+        
+                            <p>
+                                {{ tab.title }}
+                            </p>
+                            <h5 (click)="close(tab); $event.stopPropagation()" [class.active-h5]="activeIndex === tabs.indexOf(tab)">
+                                <i class="bi bi-x"></i>
+                            </h5>
+                        </div>
+                        
                     }
-                <i class="bi bi-translate"></i>
-            </div>
-            <div class="extensions">
-                <i class="bi bi-download"></i>
-                <i class="bi bi-puzzle"></i>
-                <div>
-                    <i class="bi bi-list" id="menu" (click)="menuClick()"></i>
+                     <i class="bi bi-plus" id="plus" (click)="addTab('home')"></i>
                 </div>
             </div>
-        </div>
-        <div class="browser-result">
-            
-            @for(tab of tabs; track tab.id) {
-                @if(tab.img === "home"){
-                    <div class="homepage" [class.homepage-active]="activeIndex === tabs.indexOf(tab)">
-                        <h4>INTERACTIVE<br><span>BROWSER</span></h4>
-                        <div class="home-btn-area">
-                            @for(homeTab of homeButtonPresets; track homeTab.id){
-                                <div class="home-button" (click)="updatePreset(homeTab.title.toLowerCase().replace(' ', ''))">
-                                    <img [src]='homeTab.icon' alt="icon"> 
-                                </div>
-                            }
-                        </div>
-                    </div>                
-                }@else if(tab.img === "empty"){
-
-                    <div class="empty" [class.homepage-active]="activeIndex === tabs.indexOf(tab)">
-                        <div class="empty-up">
-                            <img src="images/404.webp" alt="" class="error">
-                        </div>
-                        <div class="empty-low">
-                            <h6>Not Found</h6>
-                            <p>Page that you're looking for doesn't exist</p>
-                        </div>
+            <div class="toolbar">
+                <div class="arrow-area">
+                    <i class="bi bi-arrow-left"></i>
+                    <i class="bi bi-arrow-right"></i>
+                    <i class="bi bi-arrow-clockwise" (click)="refresh()"></i>
+                </div>
+                <div class="searchbar">
+                    <div class="searchbar-left">
+                        <i class="bi bi-shield"></i>
+                        <i class="bi bi-sliders"></i>
                     </div>
-
-                }@else {
-                    <img [src]="tab.img" alt="app showcase" [class.active-img]="activeIndex === tabs.indexOf(tab)" class="pc-img">
+                        @for(tab of tabs; track tab.id) {
+                            <input placeholder="Search browser or enter URL" (keydown.enter)="updatePreset(input)" [(ngModel)]="input" type="text" [class.active-link]="activeIndex === tabs.indexOf(tab)" [value]="tab.link"/>
+                        }
+                    <i class="bi bi-translate"></i>
+                </div>
+                <div class="extensions">
+                    <i class="bi bi-download"></i>
+                    <i class="bi bi-puzzle"></i>
+                    <div>
+                        <i class="bi bi-list" id="menu" (click)="menuClick()"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="browser-result">
+                
+                @for(tab of tabs; track tab.id) {
+                    @if(tab.img === "home"){
+                        <div class="homepage" [class.homepage-active]="activeIndex === tabs.indexOf(tab)">
+                            <h4>FLUX BROWSER</h4>
+                            <div class="home-btn-area">
+                                @for(homeTab of homeButtonPresets; track homeTab.id){
+                                    <div class="home-button" (click)="updatePreset(homeTab.title.toLowerCase().replace(' ', ''))">
+                                        <img [ngSrc]='homeTab.icon' alt="icon" height="55" width="55"> 
+                                    </div>
+                                }
+                            </div>
+                        </div>                
+                    }@else if(tab.img === "empty"){
+    
+                        <div class="empty" [class.homepage-active]="activeIndex === tabs.indexOf(tab)">
+                            <div class="empty-up">
+                                <img ngSrc="images/404.webp" alt="" class="error" width="420" height="270">
+                            </div>
+                            <div class="empty-low">
+                                <h6>Not Found</h6>
+                                <p>Page that you're looking for doesn't exist</p>
+                            </div>
+                        </div>
+    
+                    }@else {
+                        <img [ngSrc]="tab.img" alt="" [class.active-img]="activeIndex === tabs.indexOf(tab)" class="pc-img" width="1008" height="560">
+                    }
                 }
-            }
-            @for(tab of tabs; track tab.id) {
-                 @if(tab.imgPhone != "home" && tab.imgPhone != "empty"){
-                    <img [src]="tab.imgPhone" alt="app showcase" [class.active-phone]="activeIndex === tabs.indexOf(tab)" class="mobile-img">
-                 }
-                }
-
+                @for(tab of tabs; track tab.id) {
+                     @if(tab.imgPhone != "home" && tab.imgPhone != "empty"){
+                        <img [ngSrc]="tab.imgPhone" alt="" [class.active-phone]="activeIndex === tabs.indexOf(tab)" class="mobile-img" width="318" height="567">
+                     }
+                    }
+    
+            </div>
         </div>
-    </div>
 </section>

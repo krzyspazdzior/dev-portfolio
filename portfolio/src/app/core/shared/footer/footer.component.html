@@ -2,21 +2,39 @@
     <div class="content-wrapper">
         
         <p>{{"FOOTER.P" | translate}}</p>
-        <ul id="contact-ul">
-            <h2>{{"FOOTER.SUBTITLE_1" | translate}}</h2>
-            <li>PAZDZIOR.KRZYSZTOF.DEV&#64;GMAIL.COM</li>
-            <li>PAZDZIOR-WEB-DEV.NETLIFY.APP</li>
-            <li id="phone">+48 731 231 737</li>
-        </ul>
-        <ul id="nav-ul">
-            <h2>{{"FOOTER.SUBTITLE_2" | translate}}</h2>
-            <li><a href="#home">{{"HEADER.1" | translate}}</a></li>
-            <li><a href="#about-me">{{"HEADER.2" | translate}}</a></li>
-            <li><a href="#skills">{{"HEADER.3" | translate}}</a></li>
-            <li><a href="#gallery">{{"HEADER.4" | translate}}</a></li>
-            <li><a href="#contact">{{"HEADER.6" | translate}}</a></li>
-        </ul>
+        <div class="footer-ul-area">
+            
+            <ul id="nav-ul">
+                <li>
+                    <h2>{{"FOOTER.SUBTITLE_2" | translate}}</h2>
+                </li>
+                <li><a href="#home">{{"HEADER.1" | translate}}</a></li>
+                <li><a href="#about-me">{{"HEADER.2" | translate}}</a></li>
+                <li><a href="#skills">{{"HEADER.3" | translate}}</a></li>
+                <li><a href="#gallery">{{"HEADER.4" | translate}}</a></li>
+                <li><a href="#contact">{{"HEADER.6" | translate}}</a></li>
+            </ul>
+            <ul class="contact-ul" id="social">
+                <li>
+                    <h2>{{"FOOTER.SUBTITLE_3" | translate}}</h2>
+                </li>
+                <li>LinkedIn</li>
+                <li>Github</li>
+                <li class="crossed">Instagram</li>
+                <li class="crossed">Facebook</li>
+            </ul>
+            <ul class="contact-ul">
+                <li>
+                    <h2>{{"FOOTER.SUBTITLE_1" | translate}}</h2>
+                </li>
+                <li title="click to copy!" (click)="copyToClipboard('pazdzior.krzysztof.dev@gmail.com', $event)">pazdzior.krzysztof.dev&#64;gmail.com</li>
+                <li title="click to copy!" (click)="copyToClipboard('https://pazdzior-web-dev.netlify.app', $event)">pazdzior-web-dev.netlify.app</li>
+                <li id="phone" title="click to copy!" (click)="copyToClipboard('+48 731 231 737', $event)">+48 731 231 737</li>
+            </ul>
+
+        </div>
     </div>
+    <hr>
     <div class="footer-bottom">
         <div class="left-wrapper">
             <p>Supported by Netlify <i class="bi bi-database-fill"></i></p>

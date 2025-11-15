@@ -3,10 +3,11 @@ import { NgClass } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { HttpClient } from '@angular/common/http';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
-  imports: [NgClass, ReactiveFormsModule, TranslatePipe],
+  imports: [NgClass, ReactiveFormsModule, TranslatePipe, NgOptimizedImage],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css',
 })

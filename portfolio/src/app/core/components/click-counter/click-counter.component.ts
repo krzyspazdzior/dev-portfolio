@@ -1,10 +1,11 @@
 import { Component, ViewChild, ElementRef} from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 import { NgIf } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-click-counter',
-  imports: [NgIf, TranslatePipe],
+  imports: [NgIf, TranslatePipe, NgOptimizedImage],
   templateUrl: './click-counter.component.html',
   styleUrls: ['./click-counter.component.css']
 })

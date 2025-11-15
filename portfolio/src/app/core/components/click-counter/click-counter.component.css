@@ -58,7 +58,6 @@ svg{
 .info-ready{
   color: #0395f7;
   filter: drop-shadow(0 0 2px #0395f7);
-  font-weight: bold;
 }
 
 .monitor .screen {
@@ -71,7 +70,6 @@ svg{
   justify-content: center;
   color: #ffffff80;
   font-family:  monospace;
-  font-weight: bold;
   letter-spacing: 1px;
   position: relative;
   overflow: hidden;
@@ -229,7 +227,7 @@ svg{
 );
   padding: 16px 32px;
   color: rgba(255, 255, 255, 0.704);
-  font-weight: 600;
+  font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   font-size: 1rem;

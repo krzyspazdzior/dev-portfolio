@@ -6,10 +6,12 @@ import { LanguagesComponent } from "../languages/languages.component";
 import { GalleryComponent } from "../gallery/gallery.component";
 import { ContactComponent } from "../contact/contact.component";
 import { FooterComponent } from "../../shared/footer/footer.component";
-import {TranslatePipe, TranslateDirective} from "@ngx-translate/core";
+import {TranslatePipe} from "@ngx-translate/core";
+import { NgOptimizedImage } from '@angular/common';
+
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, AboutMeComponent, ClickCounterComponent, LanguagesComponent, GalleryComponent, ContactComponent, FooterComponent,TranslatePipe],
+  imports: [HeaderComponent, AboutMeComponent, ClickCounterComponent, LanguagesComponent, GalleryComponent, ContactComponent, FooterComponent,TranslatePipe, NgOptimizedImage],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
