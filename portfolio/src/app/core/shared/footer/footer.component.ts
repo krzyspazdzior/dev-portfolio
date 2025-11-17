@@ -9,6 +9,7 @@ import { TranslatePipe } from '@ngx-translate/core';
 })
 export class FooterComponent {
     copyToClipboard(text: string, event: MouseEvent) {
+      console.log('elo')
       const target = event.target as HTMLElement;
       const originalText = target.innerText;
       target.innerText = 'Copied!';
