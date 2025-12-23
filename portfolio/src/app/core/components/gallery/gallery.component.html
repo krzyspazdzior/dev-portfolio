@@ -38,7 +38,7 @@
             </div>
             <div class="toolbar">
                 <div class="arrow-area">
-                    <i class="bi bi-arrow-left"></i>
+                    <i class="bi bi-arrow-left" (click)="updatePreset('home')"></i>
                     <i class="bi bi-arrow-right"></i>
                     <i class="bi bi-arrow-clockwise" (click)="refresh()"></i>
                 </div>
@@ -65,7 +65,7 @@
                 @for(tab of tabs; track tab.id) {
                     @if(tab.img === "home"){
                         <div class="homepage" [class.homepage-active]="activeIndex === tabs.indexOf(tab)">
-                            <h4>FLUX BROWSER</h4>
+                            <h4>Portfolio Browser</h4>
                             <div class="home-btn-area">
                                 @for(homeTab of homeButtonPresets; track homeTab.id){
                                     <div class="home-button" (click)="updatePreset(homeTab.title.toLowerCase().replace(' ', ''))">
