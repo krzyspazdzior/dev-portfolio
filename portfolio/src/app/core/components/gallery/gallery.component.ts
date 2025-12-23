@@ -16,7 +16,7 @@ export class GalleryComponent {
   { 
     id: 0, 
     title: 'Home', 
-    icon: 'images/home_icon.webp', 
+    icon: 'images/home_icon.png', 
     img: 'home', 
     imgPhone: 'home', 
     link: '', 
@@ -33,7 +33,7 @@ export class GalleryComponent {
       id: -1,
       titleValue: 'home',
       title: 'Home',
-      icon: 'images/home_icon.webp',
+      icon: 'images/home_icon.png',
       img: 'home',
       imgPhone: 'home',
       link: ''

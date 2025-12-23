@@ -46,7 +46,6 @@ header.nav-scroll-scroll{
   box-shadow: rgba(149, 157, 165, 0.251) 0px 8px 24px;
   font-weight: 500;
   border-radius: 9999px;
-  padding: 30px;
   
 }
 .login-btn > a{
@@ -70,6 +69,7 @@ button.nav-login-scroll{
 }
 nav{
   height: 100%;
+  padding-left: 15px;
 }
 ul{
   height: 100%;
@@ -86,8 +86,7 @@ header nav a{
   letter-spacing: 0.5px;
   color: inherit;
   display: block;
-  border-radius: 15px;
-  border: 4px transparent solid;
+  border: 1px solid transparent;
   text-decoration: none;
   position: relative;
 }
@@ -104,30 +103,23 @@ header nav a::after {
   width: 0%;
   height: 100%;
   top: 0;
-  transition: width 0.15s ease-in-out;
+  transition: width 0.3s ease-in-out;
   z-index: 0;
 }
 
-header nav a::before {
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 5px;
-}
 
-header nav a::after {
-  right: 50%;
-  transform: translateX(50%);
-  border-radius: 5px;
-}
 
-header nav a:hover::before,
-header nav a:hover::after {
-  width: 100%;
+
+
+header nav a:hover,
+header nav a:hover {
+  border-bottom: 1px solid #ffffff45;
+  border-radius: 0px;
 }
 header nav a:hover{
   filter: drop-shadow(0 0 6px #fff);
   color: #fff;
-  transition: 0.2s;
+  transition: 0.3s ease-in-out; 
 }
 
 a:hover {

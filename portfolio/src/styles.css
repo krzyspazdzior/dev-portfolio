@@ -95,7 +95,7 @@ section{
   background-color: #ffffff18;
   position: relative;
   transition: all 0.3s ease-in-out;
-  border-radius: 15px;
+  border-radius: 9999px;
   display: flex;
   gap: 100px;
   align-items: center;
