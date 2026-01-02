@@ -168,7 +168,11 @@ button.nav-login-scroll:hover{
 
 /* Poprawka mobile menu */
 .burger-active.burger-active.burger-active{
-    border-radius: 9999px 9999px 0px 0px;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    transition: all  0.3s,
+    border-radius 0.2s;
 }
 .mobile-menu {
   background-color: #010017; 
@@ -178,29 +182,30 @@ button.nav-login-scroll:hover{
   right: 0;
   margin: 0 auto;
   z-index: 100;
-  text-align: center;
+  text-align: start;
   display: none;
   flex-direction: column;
   gap: 1.5em;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  border-radius: 0 0 50px 50px;
+  border-radius: 0;
 }
 .mobile-menu a{
   border-radius: 0px;
   width: 85%;
-  border-bottom: 1px solid #ffffff25;
+  border-bottom: 1px solid #ffffff0d;
   color: var(--font-secondary);
   text-decoration: none;
   padding: 20px;
-  
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 header .mobile-menu.menu-active {
   opacity: 1;
   transition: 1s all;
-  box-shadow: 0px 10px 10px 2px #ffffff36;
   display: flex;
 }
 .mobile-button{

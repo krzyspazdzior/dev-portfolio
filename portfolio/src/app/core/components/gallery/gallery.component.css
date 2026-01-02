@@ -345,11 +345,11 @@ i#plus {
     letter-spacing: 3px;
     font-weight: 900;
     color: transparent;
-    background: linear-gradient(90deg, #552aff, #14f3ff, #58c4ff);
+    background: linear-gradient(90deg,#12dbe5,#000,#58c4ff);
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.2);
-    text-shadow: 0 0 20px #432aff, 0 0 30px #06053f, 0 0 40px #021621, 0 0 50px #003de5;
+    text-shadow:0 0 7px #432aff,0 0 7px #0395fb,0 0 40px #021621,0 0 15px #003de5;
     filter: saturate(80%);
 }
 .homepage-active.homepage-active {
@@ -431,7 +431,8 @@ i#plus {
         padding: 16px;
     }
     .home-button img {
-        width: 12px;
+        width: 35px;
+        height: 35px;
     }
 }
 .browser-result > img {
